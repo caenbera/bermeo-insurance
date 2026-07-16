@@ -311,7 +311,7 @@ nav a:hover, nav a.active {
 /* HERO SECTION */
 .hero {
   position: relative;
-  height: 650px;
+  height: 560px; /* Shorter, elegant height */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -319,6 +319,7 @@ nav a:hover, nav a.active {
   color: var(--color-white);
   padding-top: 80px; /* Header offset */
   overflow: hidden;
+  background-color: #0A0F18; /* Dark base matching the assets */
 }
 
 .hero-overlay {
@@ -327,7 +328,7 @@ nav a:hover, nav a.active {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(10, 15, 24, 0.95) 0%, rgba(10, 15, 24, 0.7) 50%, rgba(10, 15, 24, 0.4) 100%);
+  background: linear-gradient(90deg, rgba(10, 15, 24, 0.95) 0%, rgba(10, 15, 24, 0.8) 40%, rgba(10, 15, 24, 0.3) 100%);
   z-index: 1;
 }
 
@@ -335,6 +336,30 @@ nav a:hover, nav a.active {
   position: relative;
   z-index: 2;
   max-width: 680px;
+  text-align: left;
+}
+
+.hero-tag {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+}
+
+.hero-line {
+  width: 50px;
+  height: 2px;
+  background-color: var(--color-gold);
+  margin: 1.5rem 0;
+  border: none;
+}
+
+.text-gold {
+  color: var(--color-gold) !important;
 }
 
 .breadcrumb {
@@ -362,6 +387,87 @@ nav a:hover, nav a.active {
   display: flex;
   gap: 1rem;
 }
+
+/* HERO VALUE PROPOSITION BAR */
+.value-bar {
+  background-color: #06090f; /* Slightly darker than primary background for depth */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.75rem 0;
+  position: relative;
+  z-index: 5;
+}
+
+.value-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1;
+  min-width: 200px;
+  padding: 0 1rem;
+}
+
+.value-item:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.value-icon {
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.value-icon i {
+  width: 28px;
+  height: 28px;
+}
+
+.value-text h4 {
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+
+.value-text p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .value-bar-container {
+    justify-content: center;
+    gap: 2rem;
+  }
+  .value-item {
+    flex: unset;
+    width: calc(50% - 1rem);
+  }
+  .value-item:not(:last-child) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .value-item {
+    width: 100%;
+    padding: 0;
+  }
+}
+
 
 /* CARDS */
 .card {
@@ -724,9 +830,20 @@ footer {
     min-height: 550px;
     padding-top: 100px;
     padding-bottom: 60px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+  .hero-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-line {
+    margin: 1.5rem auto !important;
   }
   .hero-ctas {
     flex-direction: column;
+    align-items: center;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -738,5 +855,13 @@ footer {
   }
   .footer-bottom-links {
     justify-content: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero {
+    background-size: auto 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
   }
 }
