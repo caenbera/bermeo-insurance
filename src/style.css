@@ -796,6 +796,10 @@ footer {
     width: 100%;
     text-align: center;
   }
+  nav a {
+    justify-content: center;
+    width: 100%;
+  }
   .breadcrumb {
     justify-content: center;
   }
@@ -814,18 +818,25 @@ footer {
     justify-content: center;
   }
   .dropdown-menu {
-    position: static;
-    transform: none;
-    opacity: 1;
-    pointer-events: all;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
     background-color: rgba(255, 255, 255, 0.03);
     border: none;
     box-shadow: none;
-    padding: 0;
+    padding: 0.5rem 0;
+    width: 100%;
     min-width: 100%;
     margin-top: 0.5rem;
     display: none;
     border-radius: 8px;
+  }
+  .nav-item-dropdown:hover .dropdown-menu,
+  .nav-item-dropdown:focus-within .dropdown-menu {
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
   }
   .nav-item-dropdown.active .dropdown-menu {
     display: block;
@@ -833,6 +844,7 @@ footer {
   .dropdown-item {
     justify-content: center;
     padding: 0.6rem 1rem;
+    width: 100%;
   }
   .hero {
     height: auto;
