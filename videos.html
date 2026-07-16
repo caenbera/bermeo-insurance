@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videoteca Exclusiva — Bermeo Insurance</title>
+  <meta name="description" content="Vea nuestras cápsulas audiovisuales sobre planificación de retiro, fideicomisos familiares e ingeniería fiscal.">
+  
+  <!-- Favicons and Web App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="/src/style.css">
+  
+  <style>
+    .hero-videos {
+      background-image: url('/src/assets/hero-videos.png');
+    }
+    
+    .video-card {
+      background-color: var(--color-white);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid rgba(0,0,0,0.03);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-premium-hover);
+    }
+    
+    .video-thumbnail-wrapper {
+      height: 200px;
+      background-color: var(--color-primary);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .video-thumbnail-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(10, 15, 24, 0.4) 0%, rgba(10, 15, 24, 0.8) 100%);
+      z-index: 1;
+      transition: var(--transition-smooth);
+    }
+    
+    .video-card:hover .video-thumbnail-overlay {
+      background: linear-gradient(180deg, rgba(10, 15, 24, 0.2) 0%, rgba(10, 15, 24, 0.7) 100%);
+    }
+    
+    .play-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: var(--color-gold);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      z-index: 2;
+      box-shadow: var(--shadow-gold);
+      transition: var(--transition-smooth);
+    }
+    
+    .video-card:hover .play-badge {
+      transform: scale(1.1);
+      background-color: var(--color-gold-light);
+    }
+    
+    .video-duration {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: var(--color-white);
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      z-index: 2;
+      font-family: var(--font-sans);
+    }
+    
+    .video-category {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: rgba(200, 154, 61, 0.95);
+      color: var(--color-primary);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 20px;
+      z-index: 2;
+      font-family: var(--font-sans);
+    }
+    
+    .video-body {
+      padding: 1.5rem;
+    }
+    
+    /* MODAL VIDEO PLAYER */
+    .video-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 15, 24, 0.97);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+      padding: 2rem;
+    }
+    
+    .video-modal.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .video-modal-content {
+      background-color: var(--color-card-dark);
+      max-width: 900px;
+      width: 100%;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid rgba(250, 250, 250, 0.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    
+    .video-player-container {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background-color: #000;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .video-mock-controls {
+      background-color: var(--color-primary);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      color: var(--color-white);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <div class="container header-container">
+      <a href="/index.html" class="logo-wrapper">
+        <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
+        <div class="logo-text">BERMEO<span>.</span></div>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i data-lucide="menu"></i>
+      </button>
+      
+      <nav id="navMenu">
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/productos.html">Productos</a></li>
+          <li><a href="/servicios.html">Servicios</a></li>
+          <li><a href="/about-us.html">Nosotros</a></li>
+          <li><a href="/calculators.html">Calculadoras</a></li>
+          <li><a href="/articles.html">Artículos</a></li>
+          <li><a href="/videos.html" class="active">Videos</a></li>
+          <li><a href="/tax.html">Impuestos</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contactar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero hero-videos">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="breadcrumb">
+        <a href="/index.html">Inicio</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Videos</span>
+      </div>
+      <h1 class="hero-title">Videoteca Patrimonial Exclusiva</h1>
+      <p class="hero-subtitle subtitle" style="color: rgba(255,255,255,0.85);">
+        Explore explicaciones audiovisuales concisas sobre ingeniería de seguros de vida, fideicomisos y optimización tributaria.
+      </p>
+      <div class="hero-ctas">
+        <a href="#videos-grid" class="btn btn-primary">Ver Catálogo</a>
+        <a href="/contact-us.html" class="btn btn-secondary">Asesoría de Video</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO LIST GRID -->
+  <section id="videos-grid" class="bg-light">
+    <div class="container">
+      
+      <div class="grid-12" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
+        
+        <!-- Video 1 -->
+        <div class="video-card animate-on-scroll" data-video-id="trusts">
+          <div class="video-thumbnail-wrapper">
+            <div class="video-thumbnail-overlay"></div>
+            <!-- Mock visual pattern inside thumbnail background -->
+            <div style="position:absolute; width:150%; height:150%; opacity:0.1; background-image: repeating-linear-gradient(45deg, var(--color-gold) 0px, var(--color-gold) 1px, transparent 1px, transparent 10px);"></div>
+            <div class="play-badge"><i data-lucide="play" style="fill: currentColor; margin-left:3px;"></i></div>
+            <span class="video-duration">4:15</span>
+            <span class="video-category">Sucesión</span>
+          </div>
+          <div class="video-body">
+            <h3 style="font-family: var(--font-sans); font-size: 1.15rem; font-weight:600; color:var(--color-primary); margin-bottom:0.5rem;">La Estructura de Fideicomisos Familiares</h3>
+            <p class="small-text">Cómo se utiliza un Fideicomiso Irrevocable de Seguro de Vida (ILIT) para evitar impuestos de sucesión.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card animate-on-scroll delay-100" data-video-id="ltc-shield">
+          <div class="video-thumbnail-wrapper">
+            <div class="video-thumbnail-overlay"></div>
+            <div style="position:absolute; width:150%; height:150%; opacity:0.1; background-image: repeating-linear-gradient(-45deg, var(--color-gold) 0px, var(--color-gold) 1px, transparent 1px, transparent 10px);"></div>
+            <div class="play-badge"><i data-lucide="play" style="fill: currentColor; margin-left:3px;"></i></div>
+            <span class="video-duration">3:40</span>
+            <span class="video-category">Protección</span>
+          </div>
+          <div class="video-body">
+            <h3 style="font-family: var(--font-sans); font-size: 1.15rem; font-weight:600; color:var(--color-primary); margin-bottom:0.5rem;">Cuidado a Largo Plazo como Blindaje</h3>
+            <p class="small-text">Estrategias modernas para evitar que costos de enfermería privada erosionen sus portafolios accionarios.</p>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-card animate-on-scroll delay-200" data-video-id="roth-conv">
+          <div class="video-thumbnail-wrapper">
+            <div class="video-thumbnail-overlay"></div>
+            <div style="position:absolute; width:150%; height:150%; opacity:0.1; background-image: radial-gradient(var(--color-gold) 1px, transparent 0); background-size: 16px 16px;"></div>
+            <div class="play-badge"><i data-lucide="play" style="fill: currentColor; margin-left:3px;"></i></div>
+            <span class="video-duration">5:10</span>
+            <span class="video-category">Impuestos</span>
+          </div>
+          <div class="video-body">
+            <h3 style="font-family: var(--font-sans); font-size: 1.15rem; font-weight:600; color:var(--color-primary); margin-bottom:0.5rem;">Conversiones a Roth IRA: Cuándo son Rentables</h3>
+            <p class="small-text">Cuándo pagar impuestos hoy le otorga retiros y traspasos sucesorios libres de impuestos a futuro.</p>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-card animate-on-scroll" data-video-id="key-person">
+          <div class="video-thumbnail-wrapper">
+            <div class="video-thumbnail-overlay"></div>
+            <div style="position:absolute; width:150%; height:150%; opacity:0.1; background-image: repeating-linear-gradient(90deg, var(--color-gold) 0px, var(--color-gold) 1px, transparent 1px, transparent 8px);"></div>
+            <div class="play-badge"><i data-lucide="play" style="fill: currentColor; margin-left:3px;"></i></div>
+            <span class="video-duration">3:05</span>
+            <span class="video-category">Corporativo</span>
+          </div>
+          <div class="video-body">
+            <h3 style="font-family: var(--font-sans); font-size: 1.15rem; font-weight:600; color:var(--color-primary); margin-bottom:0.5rem;">Estrategia de Persona Clave Empresarial</h3>
+            <p class="small-text">Mitigación de riesgos operativos y de financiamiento buy-sell ante la pérdida de socios clave.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO MODAL AND CUSTOM MOCK PLAYER -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-content">
+      
+      <!-- Video title and close -->
+      <div style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; background-color: var(--color-primary); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div>
+          <span style="color: var(--color-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;" id="videoModalCategory">Sucesión</span>
+          <h3 style="color: var(--color-white); font-family: var(--font-sans); font-size: 1.25rem; font-weight:600;" id="videoModalTitle">Título del Video</h3>
+        </div>
+        <button id="videoModalClose" style="background:none; border:none; color:var(--color-white); cursor:pointer; transition:var(--transition-smooth);" aria-label="Cerrar reproductor">
+          <i data-lucide="x" style="width:24px;height:24px;"></i>
+        </button>
+      </div>
+      
+      <!-- Mock Video Player Interface -->
+      <div class="video-player-container">
+        <!-- Overlay Play Button -->
+        <div style="background-color: var(--color-primary); width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.5rem;" id="playerIdleScreen">
+          <div style="width:80px; height:80px; border-radius:50%; border:2px solid var(--color-gold); color:var(--color-gold); display:flex; align-items:center; justify-content:center; cursor:pointer;" id="playerStartBtn">
+            <i data-lucide="play" style="fill:currentColor; width:36px; height:36px; margin-left:6px;"></i>
+          </div>
+          <p class="small-text" style="color:rgba(255,255,255,0.6);">Iniciar reproducción de video corporativo</p>
+        </div>
+        
+        <!-- Video Playing Screen -->
+        <div style="width:100%; height:100%; display:none; background-color:#050508; flex-direction:column; align-items:center; justify-content:center; color:var(--color-white);" id="playerActiveScreen">
+          <div style="animation: pulse 2s infinite; display:flex; flex-direction:column; align-items:center; gap:1rem;">
+            <i data-lucide="shield" style="width:80px; height:80px; color:var(--color-gold); opacity:0.8;"></i>
+            <h4 style="color:var(--color-white); font-family:var(--font-sans); font-weight:500;">Bermeo Insurance & Wealth Planning</h4>
+            <p style="font-size:0.8rem; color:var(--color-gold);">Reproduciendo audio y video digital...</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video controls -->
+      <div class="video-mock-controls">
+        <button id="playerPlayPause" style="background:none; border:none; color:var(--color-white); cursor:pointer;">
+          <i data-lucide="play" style="width:20px;height:20px;"></i>
+        </button>
+        <span style="font-size:0.8rem; font-family:var(--font-sans);" id="playerTime">0:00 / 0:00</span>
+        
+        <!-- Progress bar -->
+        <div style="flex-grow:1; height:4px; background-color:rgba(255,255,255,0.1); border-radius:2px; overflow:hidden; position:relative; cursor:pointer;" id="progressBarContainer">
+          <div style="height:100%; width:0%; background-color:var(--color-gold);" id="playerProgressBar"></div>
+        </div>
+        
+        <!-- Sound control -->
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <i data-lucide="phone" style="width:18px;height:18px;"></i> <!-- Using phone as sound icon fallback or just volume -->
+          <div style="width:60px; height:4px; background-color:rgba(255,255,255,0.3); border-radius:2px;">
+            <div style="width:80%; height:100%; background-color:var(--color-white);"></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand -->
+        <div class="footer-logo-desc">
+          <a href="/index.html" class="logo-wrapper">
+            <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
+            <div class="logo-text" style="color: var(--color-white);">BERMEO<span>.</span></div>
+          </a>
+          <p class="footer-desc">
+            Asesoría sofisticada y seguros de alta gama para salvaguardar el patrimonio familiar, optimizar planes de retiro y asegurar un legado impecable.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="users"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="award"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="compass"></i></a>
+          </div>
+        </div>
+        
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="/productos.html">Productos Premium</a></li>
+            <li><a href="/servicios.html">Servicios Financieros</a></li>
+            <li><a href="/about-us.html">Nosotros</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 3: Resources Links -->
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <ul class="footer-links">
+            <li><a href="/calculators.html">Calculadoras Financieras</a></li>
+            <li><a href="/articles.html">Artículos Educativos</a></li>
+            <li><a href="/videos.html">Videos Explicativos</a></li>
+            <li><a href="/tax.html">Recursos de Impuestos</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 4: Contact info -->
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i data-lucide="phone"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li>
+              <i data-lucide="mail"></i>
+              <span>contacto@bermeoinsurance.com</span>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <span>800 Pine St, Suite 2400<br>Seattle, WA 98101</span>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos de Servicio</a>
+          <a href="#">Descargo de Responsabilidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript bundle -->
+  <script type="module" src="/src/main.js"></script>
+  
+  <!-- Interactive Video Playback Logic -->
+  <script type="module">
+    import { initIcons } from '/src/main.js';
+    
+    // Videos Database
+    const videosDB = {
+      trusts: {
+        title: "La Estructura de Fideicomisos Familiares",
+        category: "Sucesión",
+        duration: "4:15"
+      },
+      "ltc-shield": {
+        title: "Cuidado a Largo Plazo como Blindaje",
+        category: "Protección",
+        duration: "3:40"
+      },
+      "roth-conv": {
+        title: "Conversiones a Roth IRA: Cuándo son Rentables",
+        category: "Impuestos",
+        duration: "5:10"
+      },
+      "key-person": {
+        title: "Estructura de Persona Clave Empresarial",
+        category: "Corporativo",
+        duration: "3:05"
+      }
+    };
+    
+    // UI Elements
+    const videoCards = document.querySelectorAll('.video-card');
+    const videoModal = document.getElementById('videoModal');
+    const videoModalClose = document.getElementById('videoModalClose');
+    const videoModalTitle = document.getElementById('videoModalTitle');
+    const videoModalCategory = document.getElementById('videoModalCategory');
+    
+    // Player screen elements
+    const playerIdleScreen = document.getElementById('playerIdleScreen');
+    const playerStartBtn = document.getElementById('playerStartBtn');
+    const playerActiveScreen = document.getElementById('playerActiveScreen');
+    const playerPlayPause = document.getElementById('playerPlayPause');
+    const playerTime = document.getElementById('playerTime');
+    const playerProgressBar = document.getElementById('playerProgressBar');
+    const progressBarContainer = document.getElementById('progressBarContainer');
+    
+    let isPlaying = false;
+    let playInterval = null;
+    let elapsedSeconds = 0;
+    let totalSeconds = 0;
+    
+    function parseDuration(durationStr) {
+      const parts = durationStr.split(':');
+      return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+    }
+    
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+    
+    function updatePlayerUI() {
+      playerTime.textContent = `${formatTime(elapsedSeconds)} / ${formatTime(totalSeconds)}`;
+      const percentage = (elapsedSeconds / totalSeconds) * 100;
+      playerProgressBar.style.width = percentage + '%';
+      
+      const icon = playerPlayPause.querySelector('i');
+      if (icon) {
+        if (isPlaying) {
+          icon.setAttribute('data-lucide', 'x'); // Change icon to Stop/Pause represented by X or similar, wait, let's keep it simple
+        } else {
+          icon.setAttribute('data-lucide', 'play');
+        }
+        initIcons();
+      }
+    }
+    
+    function startPlaying() {
+      isPlaying = true;
+      playerIdleScreen.style.display = 'none';
+      playerActiveScreen.style.display = 'flex';
+      
+      playInterval = setInterval(() => {
+        if (elapsedSeconds < totalSeconds) {
+          elapsedSeconds++;
+          updatePlayerUI();
+        } else {
+          stopPlaying();
+        }
+      }, 1000);
+      
+      updatePlayerUI();
+    }
+    
+    function stopPlaying() {
+      isPlaying = false;
+      clearInterval(playInterval);
+      playerActiveScreen.style.display = 'none';
+      playerIdleScreen.style.display = 'flex';
+      elapsedSeconds = 0;
+      updatePlayerUI();
+    }
+    
+    videoCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const videoId = card.getAttribute('data-video-id');
+        const v = videosDB[videoId];
+        
+        if (v) {
+          videoModalTitle.textContent = v.title;
+          videoModalCategory.textContent = v.category;
+          
+          totalSeconds = parseDuration(v.duration);
+          elapsedSeconds = 0;
+          isPlaying = false;
+          
+          playerIdleScreen.style.display = 'flex';
+          playerActiveScreen.style.display = 'none';
+          
+          updatePlayerUI();
+          
+          videoModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+    
+    playerStartBtn.addEventListener('click', startPlaying);
+    
+    playerPlayPause.addEventListener('click', () => {
+      if (isPlaying) {
+        stopPlaying();
+      } else {
+        startPlaying();
+      }
+    });
+    
+    // Close Modal
+    function closeVideoModal() {
+      stopPlaying();
+      videoModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    videoModalClose.addEventListener('click', closeVideoModal);
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        closeVideoModal();
+      }
+    });
+  </script>
+</body>
+</html>

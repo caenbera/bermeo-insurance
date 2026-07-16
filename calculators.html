@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadoras Financieras de Alta Gama — Bermeo Insurance</title>
+  <meta name="description" content="Use nuestras herramientas interactivas de planificación: Ahorro para el Retiro, Metas de Inversión y Necesidades de Seguro de Vida.">
+  
+  <!-- Favicons and Web App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="/src/style.css">
+  
+  <style>
+    .hero-calculators {
+      background-image: url('/src/assets/hero-calculators.png');
+    }
+    
+    .calc-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .calc-tab-btn {
+      background-color: var(--color-light-grey);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-button);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      color: var(--color-text-grey);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    
+    .calc-tab-btn.active, .calc-tab-btn:hover {
+      background-color: var(--color-primary);
+      color: var(--color-gold);
+      border-color: var(--color-gold);
+    }
+    
+    .calc-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: var(--color-white);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-premium);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      padding: 3rem;
+      display: none;
+    }
+    
+    .calc-container.active {
+      display: block;
+    }
+    
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .calc-results {
+      background-color: var(--color-light-grey);
+      border-radius: var(--radius-card);
+      padding: 2rem;
+      border-left: 4px solid var(--color-gold);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .result-badge {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      font-family: var(--font-sans);
+      margin: 1rem 0;
+    }
+    
+    .range-value {
+      float: right;
+      font-weight: 600;
+      color: var(--color-gold);
+    }
+    
+    .progress-bar-container {
+      background-color: rgba(0,0,0,0.05);
+      border-radius: 5px;
+      height: 8px;
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+    
+    .progress-bar-fill {
+      background-color: var(--color-gold);
+      height: 100%;
+      width: 0%;
+      transition: width 0.4s ease-out;
+    }
+    
+    @media (max-width: 768px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .calc-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <div class="container header-container">
+      <a href="/index.html" class="logo-wrapper">
+        <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
+        <div class="logo-text">BERMEO<span>.</span></div>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i data-lucide="menu"></i>
+      </button>
+      
+      <nav id="navMenu">
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/productos.html">Productos</a></li>
+          <li><a href="/servicios.html">Servicios</a></li>
+          <li><a href="/about-us.html">Nosotros</a></li>
+          <li><a href="/calculators.html" class="active">Calculadoras</a></li>
+          <li><a href="/articles.html">Artículos</a></li>
+          <li><a href="/videos.html">Videos</a></li>
+          <li><a href="/tax.html">Impuestos</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contactar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero hero-calculators">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="breadcrumb">
+        <a href="/index.html">Inicio</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Calculadoras</span>
+      </div>
+      <h1 class="hero-title">Herramientas de Simulación Patrimonial</h1>
+      <p class="hero-subtitle subtitle" style="color: rgba(255,255,255,0.85);">
+        Herramientas analíticas e interactivas diseñadas con rigor para ayudarle a dimensionar sus decisiones financieras.
+      </p>
+      <div class="hero-ctas">
+        <a href="#simuladores" class="btn btn-primary">Iniciar Simulador</a>
+        <a href="/contact-us.html" class="btn btn-secondary">Validar Resultados</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATORS SELECTOR & FORMS -->
+  <section class="bg-light" id="simuladores">
+    <div class="container">
+      
+      <!-- Tab Buttons -->
+      <div class="calc-tabs animate-on-scroll">
+        <button class="calc-tab-btn active" data-target="retirement-calc">Retiro Proyectado</button>
+        <button class="calc-tab-btn" data-target="goals-calc">Metas de Ahorro</button>
+        <button class="calc-tab-btn" data-target="life-calc">Necesidad de Seguro de Vida</button>
+      </div>
+      
+      <!-- Calculator 1: Retirement Savings -->
+      <div class="calc-container active animate-on-scroll" id="retirement-calc">
+        <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+          Calculadora de Ahorro para el Retiro
+        </h2>
+        <p style="margin-bottom: 2rem; color: var(--color-text-grey);">
+          Proyecte el crecimiento compuesto de su patrimonio acumulado y sus contribuciones periódicas hasta su edad estimada de retiro.
+        </p>
+        
+        <div class="calc-grid">
+          <!-- Inputs Column -->
+          <div>
+            <div class="form-group">
+              <label class="form-label">Edad Actual: <span class="range-value" id="val-age">35 años</span></label>
+              <input type="range" class="form-control" id="input-age" min="18" max="75" value="35" style="padding:0.25rem 0;">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Edad de Retiro Estimada: <span class="range-value" id="val-retire">65 años</span></label>
+              <input type="range" class="form-control" id="input-retire" min="50" max="85" value="65" style="padding:0.25rem 0;">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Patrimonio Acumulado Actual ($):</label>
+              <input type="number" class="form-control" id="input-savings" value="50000" step="5000">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Ahorro Mensual Proyectado ($):</label>
+              <input type="number" class="form-control" id="input-monthly" value="1000" step="100">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Tasa de Retorno Anual Estimada (%): <span class="range-value" id="val-return">7%</span></label>
+              <input type="range" class="form-control" id="input-return" min="1" max="15" value="7" style="padding:0.25rem 0;">
+            </div>
+          </div>
+          
+          <!-- Results Column -->
+          <div class="calc-results">
+            <div>
+              <h4 style="font-family:var(--font-sans); text-transform:uppercase; font-size:0.85rem; letter-spacing:0.08em; color:var(--color-gold); font-weight:700;">
+                Resultado Estimado
+              </h4>
+              <p style="margin-top: 0.5rem; font-size:0.95rem;">Su patrimonio acumulado total al jubilarse será de:</p>
+              <div class="result-badge" id="retirement-total">$0</div>
+              
+              <div style="margin-top: 1.5rem;">
+                <p class="small-text" style="display:flex; justify-content:space-between;">
+                  <span>Años de acumulación activa:</span>
+                  <strong id="retirement-years" style="color:var(--color-primary);">30 años</strong>
+                </p>
+                <p class="small-text" style="display:flex; justify-content:space-between; margin-top:0.5rem;">
+                  <span>Capital total aportado:</span>
+                  <strong id="retirement-contributions" style="color:var(--color-primary);">$0</strong>
+                </p>
+                <p class="small-text" style="display:flex; justify-content:space-between; margin-top:0.5rem;">
+                  <span>Interés compuesto generado:</span>
+                  <strong id="retirement-interests" style="color:var(--color-gold-dark);">$0</strong>
+                </p>
+              </div>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Optimizar con Asesoría Fiscal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Calculator 2: Savings Goals -->
+      <div class="calc-container animate-on-scroll" id="goals-calc">
+        <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+          Calculadora de Metas de Ahorro
+        </h2>
+        <p style="margin-bottom: 2rem; color: var(--color-text-grey);">
+          Defina su meta de acumulación de capital y determine el ahorro mensual requerido para alcanzarla dentro de su horizonte de tiempo.
+        </p>
+        
+        <div class="calc-grid">
+          <!-- Inputs Column -->
+          <div>
+            <div class="form-group">
+              <label class="form-label">Meta de Capital Objetivo ($):</label>
+              <input type="number" class="form-control" id="goal-amount" value="250000" step="10000">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Plazo en Años: <span class="range-value" id="val-goal-years">10 años</span></label>
+              <input type="range" class="form-control" id="goal-years" min="1" max="40" value="10" style="padding:0.25rem 0;">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Capital Inicial Disponible ($):</label>
+              <input type="number" class="form-control" id="goal-initial" value="20000" step="5000">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Tasa de Retorno Estimada Anual (%): <span class="range-value" id="val-goal-return">6%</span></label>
+              <input type="range" class="form-control" id="goal-return" min="1" max="15" value="6" style="padding:0.25rem 0;">
+            </div>
+          </div>
+          
+          <!-- Results Column -->
+          <div class="calc-results">
+            <div>
+              <h4 style="font-family:var(--font-sans); text-transform:uppercase; font-size:0.85rem; letter-spacing:0.08em; color:var(--color-gold); font-weight:700;">
+                Inversión Mensual Requerida
+              </h4>
+              <p style="margin-top: 0.5rem; font-size:0.95rem;">Para alcanzar su meta, debe invertir mensualmente:</p>
+              <div class="result-badge" id="goal-monthly-required">$0</div>
+              
+              <div style="margin-top: 1.5rem;">
+                <p class="small-text" style="display:flex; justify-content:space-between;">
+                  <span>Meta total objetivo:</span>
+                  <strong id="res-goal-target" style="color:var(--color-primary);">$250,000</strong>
+                </p>
+                <p class="small-text" style="display:flex; justify-content:space-between; margin-top:0.5rem;">
+                  <span>Contribución acumulada (Inicial + Mensual):</span>
+                  <strong id="res-goal-contributed" style="color:var(--color-primary);">$0</strong>
+                </p>
+                <div class="progress-bar-container">
+                  <div class="progress-bar-fill" id="goal-progress-bar"></div>
+                </div>
+                <p class="small-text" style="margin-top: 0.5rem; font-size:0.75rem; text-align:right; color:var(--color-text-grey);" id="goal-progress-txt">Ahorro inicial cubre 8.0% de la meta.</p>
+              </div>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Estructurar Plan de Inversión</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Calculator 3: Life Insurance Needs -->
+      <div class="calc-container animate-on-scroll" id="life-calc">
+        <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+          Necesidades de Seguro de Vida
+        </h2>
+        <p style="margin-bottom: 2rem; color: var(--color-text-grey);">
+          Evalúe con precisión científica la suma asegurada óptima que requiere para proteger sus compromisos de deuda e ingresos familiares.
+        </p>
+        
+        <div class="calc-grid">
+          <!-- Inputs Column -->
+          <div>
+            <div class="form-group">
+              <label class="form-label">Deudas Pendientes Totales ($):</label>
+              <p class="small-text" style="margin-bottom:0.25rem;">(Hipotecas, préstamos comerciales, tarjetas, etc.)</p>
+              <input type="number" class="form-control" id="life-debts" value="150000" step="10000">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Ingreso de Reemplazo Anual ($):</label>
+              <p class="small-text" style="margin-bottom:0.25rem;">(Salario actual para mantener el nivel de la familia)</p>
+              <input type="number" class="form-control" id="life-income" value="80000" step="5000">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Años de Reemplazo de Ingreso: <span class="range-value" id="val-life-years">10 años</span></label>
+              <input type="range" class="form-control" id="life-years" min="1" max="25" value="10" style="padding:0.25rem 0;">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Gastos Finales Estimados ($):</label>
+              <p class="small-text" style="margin-bottom:0.25rem;">(Funeraria, legalización, impuestos sobre sucesiones)</p>
+              <input type="number" class="form-control" id="life-final" value="25000" step="5000">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Ahorros y Pólizas Existentes ($):</label>
+              <p class="small-text" style="margin-bottom:0.25rem;">(Activos líquidos y coberturas actuales contratadas)</p>
+              <input type="number" class="form-control" id="life-existing" value="50000" step="5000">
+            </div>
+          </div>
+          
+          <!-- Results Column -->
+          <div class="calc-results">
+            <div>
+              <h4 style="font-family:var(--font-sans); text-transform:uppercase; font-size:0.85rem; letter-spacing:0.08em; color:var(--color-gold); font-weight:700;">
+                Suma Asegurada Recomendada
+              </h4>
+              <p style="margin-top: 0.5rem; font-size:0.95rem;">La cobertura de seguro de vida sugerida para su caso es:</p>
+              <div class="result-badge" id="life-net-need">$0</div>
+              
+              <div style="margin-top: 1.5rem;">
+                <p class="small-text" style="display:flex; justify-content:space-between;">
+                  <span>Necesidades brutas estimadas:</span>
+                  <strong id="res-life-gross" style="color:var(--color-primary);">$0</strong>
+                </p>
+                <p class="small-text" style="display:flex; justify-content:space-between; margin-top:0.5rem;">
+                  <span>(-) Activos existentes aplicados:</span>
+                  <strong id="res-life-existing" style="color:var(--color-gold-dark);">$50,000</strong>
+                </p>
+              </div>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Solicitar Cotización Formal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand -->
+        <div class="footer-logo-desc">
+          <a href="/index.html" class="logo-wrapper">
+            <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
+            <div class="logo-text" style="color: var(--color-white);">BERMEO<span>.</span></div>
+          </a>
+          <p class="footer-desc">
+            Asesoría sofisticada y seguros de alta gama para salvaguardar el patrimonio familiar, optimizar planes de retiro y asegurar un legado impecable.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="users"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="award"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="compass"></i></a>
+          </div>
+        </div>
+        
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="/productos.html">Productos Premium</a></li>
+            <li><a href="/servicios.html">Servicios Financieros</a></li>
+            <li><a href="/about-us.html">Nosotros</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 3: Resources Links -->
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <ul class="footer-links">
+            <li><a href="/calculators.html">Calculadoras Financieras</a></li>
+            <li><a href="/articles.html">Artículos Educativos</a></li>
+            <li><a href="/videos.html">Videos Explicativos</a></li>
+            <li><a href="/tax.html">Recursos de Impuestos</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 4: Contact info -->
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i data-lucide="phone"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li>
+              <i data-lucide="mail"></i>
+              <span>contacto@bermeoinsurance.com</span>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <span>800 Pine St, Suite 2400<br>Seattle, WA 98101</span>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos de Servicio</a>
+          <a href="#">Descargo de Responsabilidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript bundle -->
+  <script type="module" src="/src/main.js"></script>
+  
+  <!-- Interactive Calculator JavaScript Code -->
+  <script type="module">
+    // Helper to format currency
+    function formatCurrency(amount) {
+      return new Intl.NumberFormat('es-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+      }).format(amount);
+    }
+    
+    // Tab switching logic
+    const tabs = document.querySelectorAll('.calc-tab-btn');
+    const containers = document.querySelectorAll('.calc-container');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        containers.forEach(c => c.classList.remove('active'));
+        
+        tab.classList.add('active');
+        const containerId = tab.getAttribute('data-target');
+        const targetContainer = document.getElementById(containerId);
+        if (targetContainer) {
+          targetContainer.classList.add('active');
+          // Re-trigger scroll animations inside the container
+          targetContainer.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('visible'));
+        }
+      });
+    });
+    
+    // --- CALCULATOR 1: RETIREMENT SAVINGS ---
+    const inputAge = document.getElementById('input-age');
+    const inputRetire = document.getElementById('input-retire');
+    const inputSavings = document.getElementById('input-savings');
+    const inputMonthly = document.getElementById('input-monthly');
+    const inputReturn = document.getElementById('input-return');
+    
+    const valAge = document.getElementById('val-age');
+    const valRetire = document.getElementById('val-retire');
+    const valReturn = document.getElementById('val-return');
+    
+    const outTotal = document.getElementById('retirement-total');
+    const outYears = document.getElementById('retirement-years');
+    const outContributions = document.getElementById('retirement-contributions');
+    const outInterests = document.getElementById('retirement-interests');
+    
+    function calcRetirement() {
+      const age = parseInt(inputAge.value);
+      const retire = parseInt(inputRetire.value);
+      
+      // Keep retirement age equal or higher than current age
+      if (retire < age) {
+        inputRetire.value = age;
+        valRetire.textContent = age + ' años';
+      }
+      
+      const years = Math.max(0, parseInt(inputRetire.value) - age);
+      const currentSavings = parseFloat(inputSavings.value) || 0;
+      const monthly = parseFloat(inputMonthly.value) || 0;
+      const rate = (parseFloat(inputReturn.value) || 0) / 100;
+      
+      valAge.textContent = age + ' años';
+      valRetire.textContent = inputRetire.value + ' años';
+      valReturn.textContent = inputReturn.value + '%';
+      
+      outYears.textContent = years + ' años';
+      
+      if (years === 0) {
+        outTotal.textContent = formatCurrency(currentSavings);
+        outContributions.textContent = formatCurrency(0);
+        outInterests.textContent = formatCurrency(0);
+        return;
+      }
+      
+      // FVs
+      // Current savings compound: PV * (1 + r)^y
+      const fvSavings = currentSavings * Math.pow(1 + rate, years);
+      
+      // Monthly contributions compound: M * [((1 + r/12)^(n*12) - 1) / (r/12)] * (1 + r/12)
+      const months = years * 12;
+      const monthlyRate = rate / 12;
+      let fvContributions = 0;
+      if (rate > 0) {
+        fvContributions = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+      } else {
+        fvContributions = monthly * months;
+      }
+      
+      const grandTotal = fvSavings + fvContributions;
+      const totalContributed = currentSavings + (monthly * months);
+      const totalInterests = Math.max(0, grandTotal - totalContributed);
+      
+      outTotal.textContent = formatCurrency(grandTotal);
+      outContributions.textContent = formatCurrency(totalContributed);
+      outInterests.textContent = formatCurrency(totalInterests);
+    }
+    
+    [inputAge, inputRetire, inputSavings, inputMonthly, inputReturn].forEach(el => {
+      el.addEventListener('input', calcRetirement);
+    });
+    
+    // --- CALCULATOR 2: SAVINGS GOALS ---
+    const goalAmount = document.getElementById('goal-amount');
+    const goalYears = document.getElementById('goal-years');
+    const goalInitial = document.getElementById('goal-initial');
+    const goalReturn = document.getElementById('goal-return');
+    
+    const valGoalYears = document.getElementById('val-goal-years');
+    const valGoalReturn = document.getElementById('val-goal-return');
+    
+    const outGoalMonthly = document.getElementById('goal-monthly-required');
+    const resGoalTarget = document.getElementById('res-goal-target');
+    const resGoalContributed = document.getElementById('res-goal-contributed');
+    const goalProgressBar = document.getElementById('goal-progress-bar');
+    const goalProgressTxt = document.getElementById('goal-progress-txt');
+    
+    function calcGoal() {
+      const target = parseFloat(goalAmount.value) || 0;
+      const years = parseInt(goalYears.value);
+      const initial = parseFloat(goalInitial.value) || 0;
+      const rate = (parseFloat(goalReturn.value) || 0) / 100;
+      
+      valGoalYears.textContent = years + ' años';
+      valGoalReturn.textContent = goalReturn.value + '%';
+      resGoalTarget.textContent = formatCurrency(target);
+      
+      // Keep initial savings below or equal to target
+      if (initial > target) {
+        goalInitial.value = target;
+      }
+      
+      const months = years * 12;
+      const monthlyRate = rate / 12;
+      
+      // FV of initial savings
+      const fvInitial = initial * Math.pow(1 + rate, years);
+      const remainingGoal = Math.max(0, target - fvInitial);
+      
+      let monthlyRequired = 0;
+      if (remainingGoal > 0) {
+        if (rate > 0) {
+          monthlyRequired = remainingGoal / (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate));
+        } else {
+          monthlyRequired = remainingGoal / months;
+        }
+      }
+      
+      const totalContributed = initial + (monthlyRequired * months);
+      
+      outGoalMonthly.textContent = formatCurrency(monthlyRequired);
+      resGoalContributed.textContent = formatCurrency(totalContributed);
+      
+      // Progress calculation
+      const progressPercent = Math.min(100, (initial / target) * 100);
+      goalProgressBar.style.width = progressPercent + '%';
+      goalProgressTxt.textContent = `Ahorro inicial cubre el ${progressPercent.toFixed(1)}% de la meta final.`;
+    }
+    
+    [goalAmount, goalYears, goalInitial, goalReturn].forEach(el => {
+      el.addEventListener('input', calcGoal);
+    });
+    
+    // --- CALCULATOR 3: LIFE INSURANCE NEEDS ---
+    const lifeDebts = document.getElementById('life-debts');
+    const lifeIncome = document.getElementById('life-income');
+    const lifeYears = document.getElementById('life-years');
+    const lifeFinal = document.getElementById('life-final');
+    const lifeExisting = document.getElementById('life-existing');
+    
+    const valLifeYears = document.getElementById('val-life-years');
+    const outLifeNet = document.getElementById('life-net-need');
+    const resLifeGross = document.getElementById('res-life-gross');
+    const resLifeExisting = document.getElementById('res-life-existing');
+    
+    function calcLife() {
+      const debts = parseFloat(lifeDebts.value) || 0;
+      const income = parseFloat(lifeIncome.value) || 0;
+      const years = parseInt(lifeYears.value);
+      const finalExp = parseFloat(lifeFinal.value) || 0;
+      const existing = parseFloat(lifeExisting.value) || 0;
+      
+      valLifeYears.textContent = years + ' años';
+      resLifeExisting.textContent = formatCurrency(existing);
+      
+      const incomeReplacement = income * years;
+      const grossNeeds = debts + incomeReplacement + finalExp;
+      const netNeed = Math.max(0, grossNeeds - existing);
+      
+      resLifeGross.textContent = formatCurrency(grossNeeds);
+      outLifeNet.textContent = formatCurrency(netNeed);
+    }
+    
+    [lifeDebts, lifeIncome, lifeYears, lifeFinal, lifeExisting].forEach(el => {
+      el.addEventListener('input', calcLife);
+    });
+    
+    // Run initial calculations on page load
+    calcRetirement();
+    calcGoal();
+    calcLife();
+  </script>
+</body>
+</html>
