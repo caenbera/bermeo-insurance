@@ -1,19 +1,23 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve('index.html'),
-        products: resolve('products.html'),
-        services: resolve('services.html'),
-        aboutUs: resolve('about-us.html'),
-        calculators: resolve('calculators.html'),
-        articles: resolve('articles.html'),
-        videos: resolve('videos.html'),
-        taxResources: resolve('tax-resources.html'),
-        contactUs: resolve('contact-us.html'),
+        main: resolve(__dirname, 'index.html'),
+        products: resolve(__dirname, 'products.html'),
+        services: resolve(__dirname, 'services.html'),
+        aboutUs: resolve(__dirname, 'about-us.html'),
+        calculators: resolve(__dirname, 'calculators.html'),
+        articles: resolve(__dirname, 'articles.html'),
+        videos: resolve(__dirname, 'videos.html'),
+        taxResources: resolve(__dirname, 'tax-resources.html'),
+        contactUs: resolve(__dirname, 'contact-us.html'),
       },
     },
   },
