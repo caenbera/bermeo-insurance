@@ -57,6 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
+  color: var(--color-white); /* White text color override */
 }
 
 .section-title {
@@ -860,8 +861,8 @@ footer {
 
 @media (min-width: 769px) {
   .hero {
-    background-size: auto 100%;
-    background-position: right center;
+    background-size: auto 82%;
+    background-position: right 4% center;
     background-repeat: no-repeat;
   }
 }
