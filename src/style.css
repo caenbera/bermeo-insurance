@@ -769,6 +769,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .value-bar {
+    display: none;
+  }
   .header-container {
     height: 70px;
   }
