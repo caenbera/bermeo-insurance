@@ -790,6 +790,14 @@ footer {
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
+    width: 100%;
+  }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  .breadcrumb {
+    justify-content: center;
   }
   .menu-toggle {
     display: block;
