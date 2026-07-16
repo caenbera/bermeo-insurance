@@ -27,7 +27,9 @@ import {
   Compass,
   FileCheck,
   Check,
-  ExternalLink
+  ExternalLink,
+  Target,
+  Globe
 } from 'lucide';
 
 // Initialize Lucide Icons globally
@@ -61,7 +63,9 @@ export function initIcons() {
       Compass,
       FileCheck,
       Check,
-      ExternalLink
+      ExternalLink,
+      Target,
+      Globe
     }
   });
 }
