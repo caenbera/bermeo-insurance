@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nosotros — Bermeo Insurance</title>
-  <meta name="description" content="Conozca la historia, misión y valores de Diana Bermeo y el equipo de asesores detrás de Bermeo Insurance & Wealth Planning.">
+  <title>About Us — Bermeo Insurance</title>
+  <meta name="description" content="Learn about the background, mission, and values of Diana Bermeo and the team behind Bermeo Insurance & Wealth Planning.">
   
   <!-- Favicons and Web App Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -56,28 +56,48 @@
     <div class="container header-container">
       <a href="/index.html" class="logo-wrapper">
         <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
-        <div class="logo-text">BERMEO<span>.</span></div>
       </a>
       
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
         <i data-lucide="menu"></i>
       </button>
       
       <nav id="navMenu">
         <ul>
-          <li><a href="/index.html">Inicio</a></li>
-          <li><a href="/productos.html">Productos</a></li>
-          <li><a href="/servicios.html">Servicios</a></li>
-          <li><a href="/about-us.html" class="active">Nosotros</a></li>
-          <li><a href="/calculators.html">Calculadoras</a></li>
-          <li><a href="/articles.html">Artículos</a></li>
-          <li><a href="/videos.html">Videos</a></li>
-          <li><a href="/tax.html">Impuestos</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about-us.html" class="active">About Us</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Products & Services <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/products.html" class="dropdown-item"><i data-lucide="shield"></i> Products</a>
+              <a href="/services.html" class="dropdown-item"><i data-lucide="landmark"></i> Services</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Resources <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/calculators.html" class="dropdown-item"><i data-lucide="calculator"></i> Calculators</a>
+              <a href="/articles.html" class="dropdown-item"><i data-lucide="book-open"></i> Articles</a>
+              <a href="/tax-resources.html" class="dropdown-item"><i data-lucide="file-text"></i> Tax Resources</a>
+              <a href="/videos.html" class="dropdown-item"><i data-lucide="play"></i> Videos</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Account Access <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.mynyl.newyorklife.com" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYL Online Account</a>
+              <a href="https://investor.wealthscape.com/NYLIFEsecurities/investor-index.html" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYLIFE Securities</a>
+              <a href="https://secureaccountview.com/BFWeb/clients/nylifunds/index" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> MainStay Mutual Funds</a>
+            </div>
+          </li>
         </ul>
       </nav>
       
       <div class="nav-cta">
-        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contactar</a>
+        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contact Us</a>
       </div>
     </div>
   </header>
@@ -87,15 +107,15 @@
     <div class="hero-overlay" style="background: linear-gradient(90deg, rgba(10, 15, 24, 0.95) 0%, rgba(10, 15, 24, 0.8) 60%, rgba(10, 15, 24, 0.5) 100%);"></div>
     <div class="container hero-content">
       <div class="breadcrumb">
-        <a href="/index.html">Inicio</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Nosotros</span>
+        <a href="/index.html">Home</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>About Us</span>
       </div>
-      <h1 class="hero-title">Preservando legados con integridad y excelencia</h1>
+      <h1 class="hero-title">Preserving legacies with integrity and excellence</h1>
       <p class="hero-subtitle subtitle" style="color: rgba(255,255,255,0.85);">
-        Un equipo de planificadores dedicados a brindar consultoría de alto nivel y soluciones de cobertura personalizadas para familias e instituciones de alto patrimonio.
+        A team of dedicated planners committed to delivering high-level advisory and bespoke coverage solutions for high-net-worth families and institutions.
       </p>
       <div class="hero-ctas">
-        <a href="#liderazgo" class="btn btn-primary">Conocer Fundadora</a>
-        <a href="#valores" class="btn btn-secondary">Nuestros Valores</a>
+        <a href="#liderazgo" class="btn btn-primary">Meet Our Founder</a>
+        <a href="#valores" class="btn btn-secondary">Our Values</a>
       </div>
     </div>
   </section>
@@ -108,8 +128,7 @@
         <!-- Left: Founder photo styled -->
         <div class="animate-on-scroll" style="position: relative;">
           <div style="border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-premium); border: 1px solid rgba(0,0,0,0.05); background-color: var(--color-white); padding: 12px;">
-            <!-- Using mujer-homepage.png as founder photo -->
-            <img src="/src/assets/mujer-homepage.png" alt="Diana Bermeo - Fundadora de Bermeo Insurance" style="width: 100%; height: auto; border-radius: 10px; display: block; object-fit: cover;">
+            <img src="/src/assets/mujer-homepage.png" alt="Diana Bermeo - Founder of Bermeo Insurance" style="width: 100%; height: auto; border-radius: 10px; display: block; object-fit: cover;">
           </div>
           <!-- Border accent behind image -->
           <div style="position: absolute; top: -15px; right: -15px; width: 80px; height: 80px; border-top: 3px solid var(--color-gold); border-right: 3px solid var(--color-gold); z-index: -1; pointer-events: none;"></div>
@@ -119,23 +138,23 @@
         <!-- Right: Text details -->
         <div class="animate-on-scroll delay-200">
           <span style="color: var(--color-gold); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">
-            Liderazgo y Confianza
+            Leadership & Trust
           </span>
           <h2 class="section-title">Diana Bermeo</h2>
-          <h4 style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 500; color: var(--color-gold); margin-bottom: 1.5rem;">Fundadora & Asesora Financiera Principal</h4>
+          <h4 style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 500; color: var(--color-gold); margin-bottom: 1.5rem;">Founder & Principal Financial Advisor</h4>
           
           <p style="margin-bottom: 1.25rem;">
-            Con más de una década de trayectoria en la industria aseguradora y de wealth management, Diana Bermeo fundó Bermeo Insurance bajo una premisa sencilla pero trascendental: las familias con un alto patrimonio merecen un nivel de protección e ingeniería de seguros que combine solidez técnica y cercanía real.
+            With over a decade of experience in the insurance and wealth management industry, Diana Bermeo founded Bermeo Insurance on a simple yet profound premise: high-net-worth families deserve a level of protection and insurance engineering that combines technical sophistication with real personal attention.
           </p>
           <p style="margin-bottom: 1.5rem; color: var(--color-text-grey);">
-            "Nuestra labor no es vender contratos; es estructurar defensas para la riqueza de su familia y la continuidad de sus empresas. Cada solución tributaria, seguro de vida, y plan de retiro que implementamos está alineado con la visión de vida de nuestros clientes."
+            "Our mission is not to sell contracts; it is to structure defense strategies for your family's wealth and business continuity. Every tax-optimized solution, life insurance policy, and retirement plan we implement is aligned with our clients' life vision."
           </p>
           
           <div style="border-left: 2px solid var(--color-gold); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--color-primary); font-size: 1.1rem; font-family: var(--font-serif);">
-            "Salvaguardar un legado requiere rigor en los números y empatía en las relaciones."
+            "Safeguarding a legacy requires technical rigor and genuine relationship building."
           </div>
           
-          <a href="/contact-us.html" class="btn btn-primary">Programar Consulta con Diana</a>
+          <a href="/contact-us.html" class="btn btn-primary">Schedule a Meeting with Diana</a>
         </div>
         
       </div>
@@ -148,10 +167,10 @@
       
       <div class="section-header animate-on-scroll">
         <span style="color: var(--color-gold); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">
-          Nuestros Pilares
+          Our Pillars
         </span>
-        <h2 class="section-title">Valores que rigen nuestra labor diaria</h2>
-        <p class="subtitle">Creemos en un servicio impecable y en compromisos a largo plazo que trascienden generaciones.</p>
+        <h2 class="section-title">Core values guiding our daily work</h2>
+        <p class="subtitle">We believe in impeccable service and long-term commitments that transcend generations.</p>
       </div>
       
       <div class="grid-12" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
@@ -161,9 +180,9 @@
           <div class="card-icon">
             <i data-lucide="shield"></i>
           </div>
-          <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom: 0.75rem;">Confidencialidad Absoluta</h3>
+          <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom: 0.75rem;">Absolute Confidentiality</h3>
           <p class="small-text">
-            Manejamos toda la información patrimonial y personal con el más estricto secreto corporativo, resguardando la privacidad de su familia y socios comerciales en todo momento.
+            We manage all wealth and personal data under the strictest corporate secrecy, protecting your family's and business partners' privacy at all times.
           </p>
         </div>
 
@@ -172,9 +191,9 @@
           <div class="card-icon">
             <i data-lucide="award"></i>
           </div>
-          <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom: 0.75rem;">Rigor Técnico</h3>
+          <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom: 0.75rem;">Technical Rigor</h3>
           <p class="small-text">
-            Nuestros planes de seguros e inversiones están respaldados por análisis cuantitativos exhaustivos, asegurando la optimización fiscal ante la IRS y la solidez ante litigios.
+            Our insurance and investment plans are backed by exhaustive quantitative analysis, ensuring tax optimization and compliance with IRS guidelines.
           </p>
         </div>
 
@@ -183,9 +202,9 @@
           <div class="card-icon">
             <i data-lucide="heart-handshake"></i>
           </div>
-          <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom: 0.75rem;">Cercanía Humana</h3>
+          <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom: 0.75rem;">Human Connection</h3>
           <p class="small-text">
-            Creemos en las personas. Su asesor no será una voz en un call center, sino un socio de confianza que le acompañará en las distintas transiciones financieras de su vida.
+            We believe in relationships. Your advisor will not be a voice in a call center, but a trusted partner who accompanies you through your financial milestones.
           </p>
         </div>
         
@@ -196,11 +215,11 @@
   <!-- CTA SECTION -->
   <section class="bg-dark" style="text-align: center;">
     <div class="container" style="max-width: 700px;">
-      <h2 class="section-title">Consolide su plan financiero hoy</h2>
+      <h2 class="section-title">Consolidate your financial plan today</h2>
       <p class="subtitle" style="color: rgba(255,255,255,0.7); margin-bottom: 2.5rem;">
-        Permítanos ser sus socios en la protección de su capital y en la estructuración de su retiro.
+        Allow us to be your partners in protecting your capital and structuring your retirement.
       </p>
-      <a href="/contact-us.html" class="btn btn-primary btn-lg">Contactar con un Especialista</a>
+      <a href="/contact-us.html" class="btn btn-primary btn-lg">Contact a Specialist</a>
     </div>
   </section>
 
@@ -213,10 +232,9 @@
         <div class="footer-logo-desc">
           <a href="/index.html" class="logo-wrapper">
             <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
-            <div class="logo-text" style="color: var(--color-white);">BERMEO<span>.</span></div>
           </a>
           <p class="footer-desc">
-            Asesoría sofisticada y seguros de alta gama para salvaguardar el patrimonio familiar, optimizar planes de retiro y asegurar un legado impecable.
+            Sophisticated advisory and premium insurance solutions designed to safeguard family wealth, optimize retirement planning, and secure an impeccable legacy.
           </p>
           <div class="footer-socials">
             <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="users"></i></a>
@@ -227,29 +245,29 @@
         
         <!-- Col 2: Navigation Links -->
         <div class="footer-col">
-          <h4>Explorar</h4>
+          <h4>Explore</h4>
           <ul class="footer-links">
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/productos.html">Productos Premium</a></li>
-            <li><a href="/servicios.html">Servicios Financieros</a></li>
-            <li><a href="/about-us.html">Nosotros</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">About Us</a></li>
+            <li><a href="/products.html">Premium Products</a></li>
+            <li><a href="/services.html">Financial Services</a></li>
           </ul>
         </div>
         
         <!-- Col 3: Resources Links -->
         <div class="footer-col">
-          <h4>Recursos</h4>
+          <h4>Resources</h4>
           <ul class="footer-links">
-            <li><a href="/calculators.html">Calculadoras Financieras</a></li>
-            <li><a href="/articles.html">Artículos Educativos</a></li>
-            <li><a href="/videos.html">Videos Explicativos</a></li>
-            <li><a href="/tax.html">Recursos de Impuestos</a></li>
+            <li><a href="/calculators.html">Financial Calculators</a></li>
+            <li><a href="/articles.html">Educational Articles</a></li>
+            <li><a href="/tax-resources.html">Tax Resources</a></li>
+            <li><a href="/videos.html">Explanatory Videos</a></li>
           </ul>
         </div>
         
         <!-- Col 4: Contact info -->
         <div class="footer-col">
-          <h4>Contacto</h4>
+          <h4>Contact</h4>
           <ul class="footer-contact-list">
             <li>
               <i data-lucide="phone"></i>
@@ -257,7 +275,7 @@
             </li>
             <li>
               <i data-lucide="mail"></i>
-              <span>contacto@bermeoinsurance.com</span>
+              <span>contact@bermeoinsurance.com</span>
             </li>
             <li>
               <i data-lucide="map-pin"></i>
@@ -270,11 +288,11 @@
       
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. All rights reserved.</p>
         <div class="footer-bottom-links">
-          <a href="#">Política de Privacidad</a>
-          <a href="#">Términos de Servicio</a>
-          <a href="#">Descargo de Responsabilidad</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Disclosures</a>
         </div>
       </div>
     </div>

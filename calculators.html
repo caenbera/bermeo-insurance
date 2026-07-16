@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadoras Financieras de Alta Gama — Bermeo Insurance</title>
-  <meta name="description" content="Use nuestras herramientas interactivas de planificación: Ahorro para el Retiro, Metas de Inversión y Necesidades de Seguro de Vida.">
+  <title>Premium Financial Calculators — Bermeo Insurance</title>
+  <meta name="description" content="Use our interactive planning tools: Retirement Savings, Investment Goals, and Life Insurance Needs.">
   
   <!-- Favicons and Web App Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -125,28 +125,48 @@
     <div class="container header-container">
       <a href="/index.html" class="logo-wrapper">
         <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
-        <div class="logo-text">BERMEO<span>.</span></div>
       </a>
       
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
         <i data-lucide="menu"></i>
       </button>
       
       <nav id="navMenu">
         <ul>
-          <li><a href="/index.html">Inicio</a></li>
-          <li><a href="/productos.html">Productos</a></li>
-          <li><a href="/servicios.html">Servicios</a></li>
-          <li><a href="/about-us.html">Nosotros</a></li>
-          <li><a href="/calculators.html" class="active">Calculadoras</a></li>
-          <li><a href="/articles.html">Artículos</a></li>
-          <li><a href="/videos.html">Videos</a></li>
-          <li><a href="/tax.html">Impuestos</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Products & Services <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/products.html" class="dropdown-item"><i data-lucide="shield"></i> Products</a>
+              <a href="/services.html" class="dropdown-item"><i data-lucide="landmark"></i> Services</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="active">Resources <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/calculators.html" class="dropdown-item"><i data-lucide="calculator"></i> Calculators</a>
+              <a href="/articles.html" class="dropdown-item"><i data-lucide="book-open"></i> Articles</a>
+              <a href="/tax-resources.html" class="dropdown-item"><i data-lucide="file-text"></i> Tax Resources</a>
+              <a href="/videos.html" class="dropdown-item"><i data-lucide="play"></i> Videos</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Account Access <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.mynyl.newyorklife.com" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYL Online Account</a>
+              <a href="https://investor.wealthscape.com/NYLIFEsecurities/investor-index.html" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYLIFE Securities</a>
+              <a href="https://secureaccountview.com/BFWeb/clients/nylifunds/index" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> MainStay Mutual Funds</a>
+            </div>
+          </li>
         </ul>
       </nav>
       
       <div class="nav-cta">
-        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contactar</a>
+        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contact Us</a>
       </div>
     </div>
   </header>
@@ -156,15 +176,15 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="breadcrumb">
-        <a href="/index.html">Inicio</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Calculadoras</span>
+        <a href="/index.html">Home</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Calculators</span>
       </div>
-      <h1 class="hero-title">Herramientas de Simulación Patrimonial</h1>
+      <h1 class="hero-title">Wealth Simulation Tools</h1>
       <p class="hero-subtitle subtitle" style="color: rgba(255,255,255,0.85);">
-        Herramientas analíticas e interactivas diseñadas con rigor para ayudarle a dimensionar sus decisiones financieras.
+        Bespoke analytical tools designed to help you dimension your key financial decisions.
       </p>
       <div class="hero-ctas">
-        <a href="#simuladores" class="btn btn-primary">Iniciar Simulador</a>
-        <a href="/contact-us.html" class="btn btn-secondary">Validar Resultados</a>
+        <a href="#simuladores" class="btn btn-primary">Start Simulator</a>
+        <a href="/contact-us.html" class="btn btn-secondary">Verify Results</a>
       </div>
     </div>
   </section>
@@ -175,45 +195,45 @@
       
       <!-- Tab Buttons -->
       <div class="calc-tabs animate-on-scroll">
-        <button class="calc-tab-btn active" data-target="retirement-calc">Retiro Proyectado</button>
-        <button class="calc-tab-btn" data-target="goals-calc">Metas de Ahorro</button>
-        <button class="calc-tab-btn" data-target="life-calc">Necesidad de Seguro de Vida</button>
+        <button class="calc-tab-btn active" data-target="retirement-calc">Retirement Projected</button>
+        <button class="calc-tab-btn" data-target="goals-calc">Savings Goals</button>
+        <button class="calc-tab-btn" data-target="life-calc">Life Insurance Need</button>
       </div>
       
       <!-- Calculator 1: Retirement Savings -->
       <div class="calc-container active animate-on-scroll" id="retirement-calc">
         <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
-          Calculadora de Ahorro para el Retiro
+          Retirement Savings Calculator
         </h2>
         <p style="margin-bottom: 2rem; color: var(--color-text-grey);">
-          Proyecte el crecimiento compuesto de su patrimonio acumulado y sus contribuciones periódicas hasta su edad estimada de retiro.
+          Project the compound growth of your accumulated wealth and periodic contributions up to your estimated retirement age.
         </p>
         
         <div class="calc-grid">
           <!-- Inputs Column -->
           <div>
             <div class="form-group">
-              <label class="form-label">Edad Actual: <span class="range-value" id="val-age">35 años</span></label>
+              <label class="form-label">Current Age: <span class="range-value" id="val-age">35 years</span></label>
               <input type="range" class="form-control" id="input-age" min="18" max="75" value="35" style="padding:0.25rem 0;">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Edad de Retiro Estimada: <span class="range-value" id="val-retire">65 años</span></label>
+              <label class="form-label">Estimated Retirement Age: <span class="range-value" id="val-retire">65 years</span></label>
               <input type="range" class="form-control" id="input-retire" min="50" max="85" value="65" style="padding:0.25rem 0;">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Patrimonio Acumulado Actual ($):</label>
+              <label class="form-label">Current Wealth Asset ($):</label>
               <input type="number" class="form-control" id="input-savings" value="50000" step="5000">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Ahorro Mensual Proyectado ($):</label>
+              <label class="form-label">Projected Monthly Savings ($):</label>
               <input type="number" class="form-control" id="input-monthly" value="1000" step="100">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Tasa de Retorno Anual Estimada (%): <span class="range-value" id="val-return">7%</span></label>
+              <label class="form-label">Estimated Annual Return Rate (%): <span class="range-value" id="val-return">7%</span></label>
               <input type="range" class="form-control" id="input-return" min="1" max="15" value="7" style="padding:0.25rem 0;">
             </div>
           </div>
@@ -222,29 +242,29 @@
           <div class="calc-results">
             <div>
               <h4 style="font-family:var(--font-sans); text-transform:uppercase; font-size:0.85rem; letter-spacing:0.08em; color:var(--color-gold); font-weight:700;">
-                Resultado Estimado
+                Projected Balance
               </h4>
-              <p style="margin-top: 0.5rem; font-size:0.95rem;">Su patrimonio acumulado total al jubilarse será de:</p>
+              <p style="margin-top: 0.5rem; font-size:0.95rem;">Your total accumulated wealth at retirement will be:</p>
               <div class="result-badge" id="retirement-total">$0</div>
               
               <div style="margin-top: 1.5rem;">
                 <p class="small-text" style="display:flex; justify-content:space-between;">
-                  <span>Años de acumulación activa:</span>
-                  <strong id="retirement-years" style="color:var(--color-primary);">30 años</strong>
+                  <span>Active accumulation years:</span>
+                  <strong id="retirement-years" style="color:var(--color-primary);">30 years</strong>
                 </p>
                 <p class="small-text" style="display:flex; justify-content:space-between; margin-top:0.5rem;">
-                  <span>Capital total aportado:</span>
+                  <span>Total capital contributed:</span>
                   <strong id="retirement-contributions" style="color:var(--color-primary);">$0</strong>
                 </p>
                 <p class="small-text" style="display:flex; justify-content:space-between; margin-top:0.5rem;">
-                  <span>Interés compuesto generado:</span>
+                  <span>Compound interest generated:</span>
                   <strong id="retirement-interests" style="color:var(--color-gold-dark);">$0</strong>
                 </p>
               </div>
             </div>
             
             <div style="margin-top: 2rem;">
-              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Optimizar con Asesoría Fiscal</a>
+              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Optimize with Tax Advisory</a>
             </div>
           </div>
         </div>
@@ -253,32 +273,32 @@
       <!-- Calculator 2: Savings Goals -->
       <div class="calc-container animate-on-scroll" id="goals-calc">
         <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
-          Calculadora de Metas de Ahorro
+          Savings Goals Calculator
         </h2>
         <p style="margin-bottom: 2rem; color: var(--color-text-grey);">
-          Defina su meta de acumulación de capital y determine el ahorro mensual requerido para alcanzarla dentro de su horizonte de tiempo.
+          Define your wealth target and determine the monthly saving required to achieve it within your time horizon.
         </p>
         
         <div class="calc-grid">
           <!-- Inputs Column -->
           <div>
             <div class="form-group">
-              <label class="form-label">Meta de Capital Objetivo ($):</label>
+              <label class="form-label">Target Wealth Amount ($):</label>
               <input type="number" class="form-control" id="goal-amount" value="250000" step="10000">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Plazo en Años: <span class="range-value" id="val-goal-years">10 años</span></label>
+              <label class="form-label">Time Horizon in Years: <span class="range-value" id="val-goal-years">10 years</span></label>
               <input type="range" class="form-control" id="goal-years" min="1" max="40" value="10" style="padding:0.25rem 0;">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Capital Inicial Disponible ($):</label>
+              <label class="form-label">Initial Available Capital ($):</label>
               <input type="number" class="form-control" id="goal-initial" value="20000" step="5000">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Tasa de Retorno Estimada Anual (%): <span class="range-value" id="val-goal-return">6%</span></label>
+              <label class="form-label">Estimated Annual Return Rate (%): <span class="range-value" id="val-goal-return">6%</span></label>
               <input type="range" class="form-control" id="goal-return" min="1" max="15" value="6" style="padding:0.25rem 0;">
             </div>
           </div>
@@ -287,29 +307,29 @@
           <div class="calc-results">
             <div>
               <h4 style="font-family:var(--font-sans); text-transform:uppercase; font-size:0.85rem; letter-spacing:0.08em; color:var(--color-gold); font-weight:700;">
-                Inversión Mensual Requerida
+                Required Monthly Investment
               </h4>
-              <p style="margin-top: 0.5rem; font-size:0.95rem;">Para alcanzar su meta, debe invertir mensualmente:</p>
+              <p style="margin-top: 0.5rem; font-size:0.95rem;">To reach your goal, you must invest monthly:</p>
               <div class="result-badge" id="goal-monthly-required">$0</div>
               
               <div style="margin-top: 1.5rem;">
                 <p class="small-text" style="display:flex; justify-content:space-between;">
-                  <span>Meta total objetivo:</span>
+                  <span>Target wealth amount:</span>
                   <strong id="res-goal-target" style="color:var(--color-primary);">$250,000</strong>
                 </p>
                 <p class="small-text" style="display:flex; justify-content:space-between; margin-top:0.5rem;">
-                  <span>Contribución acumulada (Inicial + Mensual):</span>
+                  <span>Accumulated contribution (Initial + Monthly):</span>
                   <strong id="res-goal-contributed" style="color:var(--color-primary);">$0</strong>
                 </p>
                 <div class="progress-bar-container">
                   <div class="progress-bar-fill" id="goal-progress-bar"></div>
                 </div>
-                <p class="small-text" style="margin-top: 0.5rem; font-size:0.75rem; text-align:right; color:var(--color-text-grey);" id="goal-progress-txt">Ahorro inicial cubre 8.0% de la meta.</p>
+                <p class="small-text" style="margin-top: 0.5rem; font-size:0.75rem; text-align:right; color:var(--color-text-grey);" id="goal-progress-txt">Initial savings cover 8.0% of the target.</p>
               </div>
             </div>
             
             <div style="margin-top: 2rem;">
-              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Estructurar Plan de Inversión</a>
+              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Structure Investment Plan</a>
             </div>
           </div>
         </div>
@@ -318,41 +338,41 @@
       <!-- Calculator 3: Life Insurance Needs -->
       <div class="calc-container animate-on-scroll" id="life-calc">
         <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
-          Necesidades de Seguro de Vida
+          Life Insurance Needs
         </h2>
         <p style="margin-bottom: 2rem; color: var(--color-text-grey);">
-          Evalúe con precisión científica la suma asegurada óptima que requiere para proteger sus compromisos de deuda e ingresos familiares.
+          Assess with scientific accuracy the optimal sum assured required to protect your debts and family income.
         </p>
         
         <div class="calc-grid">
           <!-- Inputs Column -->
           <div>
             <div class="form-group">
-              <label class="form-label">Deudas Pendientes Totales ($):</label>
-              <p class="small-text" style="margin-bottom:0.25rem;">(Hipotecas, préstamos comerciales, tarjetas, etc.)</p>
+              <label class="form-label">Total Outstanding Debts ($):</label>
+              <p class="small-text" style="margin-bottom:0.25rem;">(Mortgages, commercial loans, credit cards, etc.)</p>
               <input type="number" class="form-control" id="life-debts" value="150000" step="10000">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Ingreso de Reemplazo Anual ($):</label>
-              <p class="small-text" style="margin-bottom:0.25rem;">(Salario actual para mantener el nivel de la familia)</p>
+              <label class="form-label">Annual Income Replacement ($):</label>
+              <p class="small-text" style="margin-bottom:0.25rem;">(Current salary needed to sustain family lifestyle)</p>
               <input type="number" class="form-control" id="life-income" value="80000" step="5000">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Años de Reemplazo de Ingreso: <span class="range-value" id="val-life-years">10 años</span></label>
+              <label class="form-label">Income Replacement Years: <span class="range-value" id="val-life-years">10 years</span></label>
               <input type="range" class="form-control" id="life-years" min="1" max="25" value="10" style="padding:0.25rem 0;">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Gastos Finales Estimados ($):</label>
-              <p class="small-text" style="margin-bottom:0.25rem;">(Funeraria, legalización, impuestos sobre sucesiones)</p>
+              <label class="form-label">Estimated Final Expenses ($):</label>
+              <p class="small-text" style="margin-bottom:0.25rem;">(Funeral, probate, inheritance estate taxes)</p>
               <input type="number" class="form-control" id="life-final" value="25000" step="5000">
             </div>
             
             <div class="form-group">
-              <label class="form-label">Ahorros y Pólizas Existentes ($):</label>
-              <p class="small-text" style="margin-bottom:0.25rem;">(Activos líquidos y coberturas actuales contratadas)</p>
+              <label class="form-label">Existing Savings & Policies ($):</label>
+              <p class="small-text" style="margin-bottom:0.25rem;">(Current liquid assets and coverages already active)</p>
               <input type="number" class="form-control" id="life-existing" value="50000" step="5000">
             </div>
           </div>
@@ -361,25 +381,25 @@
           <div class="calc-results">
             <div>
               <h4 style="font-family:var(--font-sans); text-transform:uppercase; font-size:0.85rem; letter-spacing:0.08em; color:var(--color-gold); font-weight:700;">
-                Suma Asegurada Recomendada
+                Recommended Sum Assured
               </h4>
-              <p style="margin-top: 0.5rem; font-size:0.95rem;">La cobertura de seguro de vida sugerida para su caso es:</p>
+              <p style="margin-top: 0.5rem; font-size:0.95rem;">The suggested life insurance coverage for your case is:</p>
               <div class="result-badge" id="life-net-need">$0</div>
               
               <div style="margin-top: 1.5rem;">
                 <p class="small-text" style="display:flex; justify-content:space-between;">
-                  <span>Necesidades brutas estimadas:</span>
+                  <span>Estimated gross needs:</span>
                   <strong id="res-life-gross" style="color:var(--color-primary);">$0</strong>
                 </p>
                 <p class="small-text" style="display:flex; justify-content:space-between; margin-top:0.5rem;">
-                  <span>(-) Activos existentes aplicados:</span>
+                  <span>(-) Applied existing assets:</span>
                   <strong id="res-life-existing" style="color:var(--color-gold-dark);">$50,000</strong>
                 </p>
               </div>
             </div>
             
             <div style="margin-top: 2rem;">
-              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Solicitar Cotización Formal</a>
+              <a href="/contact-us.html" class="btn btn-primary" style="width: 100%;">Request Formal Quote</a>
             </div>
           </div>
         </div>
@@ -397,10 +417,9 @@
         <div class="footer-logo-desc">
           <a href="/index.html" class="logo-wrapper">
             <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
-            <div class="logo-text" style="color: var(--color-white);">BERMEO<span>.</span></div>
           </a>
           <p class="footer-desc">
-            Asesoría sofisticada y seguros de alta gama para salvaguardar el patrimonio familiar, optimizar planes de retiro y asegurar un legado impecable.
+            Sophisticated advisory and premium insurance solutions designed to safeguard family wealth, optimize retirement planning, and secure an impeccable legacy.
           </p>
           <div class="footer-socials">
             <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="users"></i></a>
@@ -411,29 +430,29 @@
         
         <!-- Col 2: Navigation Links -->
         <div class="footer-col">
-          <h4>Explorar</h4>
+          <h4>Explore</h4>
           <ul class="footer-links">
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/productos.html">Productos Premium</a></li>
-            <li><a href="/servicios.html">Servicios Financieros</a></li>
-            <li><a href="/about-us.html">Nosotros</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">About Us</a></li>
+            <li><a href="/products.html">Premium Products</a></li>
+            <li><a href="/services.html">Financial Services</a></li>
           </ul>
         </div>
         
         <!-- Col 3: Resources Links -->
         <div class="footer-col">
-          <h4>Recursos</h4>
+          <h4>Resources</h4>
           <ul class="footer-links">
-            <li><a href="/calculators.html">Calculadoras Financieras</a></li>
-            <li><a href="/articles.html">Artículos Educativos</a></li>
-            <li><a href="/videos.html">Videos Explicativos</a></li>
-            <li><a href="/tax.html">Recursos de Impuestos</a></li>
+            <li><a href="/calculators.html">Financial Calculators</a></li>
+            <li><a href="/articles.html">Educational Articles</a></li>
+            <li><a href="/tax-resources.html">Tax Resources</a></li>
+            <li><a href="/videos.html">Explanatory Videos</a></li>
           </ul>
         </div>
         
         <!-- Col 4: Contact info -->
         <div class="footer-col">
-          <h4>Contacto</h4>
+          <h4>Contact</h4>
           <ul class="footer-contact-list">
             <li>
               <i data-lucide="phone"></i>
@@ -441,7 +460,7 @@
             </li>
             <li>
               <i data-lucide="mail"></i>
-              <span>contacto@bermeoinsurance.com</span>
+              <span>contact@bermeoinsurance.com</span>
             </li>
             <li>
               <i data-lucide="map-pin"></i>
@@ -454,11 +473,11 @@
       
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. All rights reserved.</p>
         <div class="footer-bottom-links">
-          <a href="#">Política de Privacidad</a>
-          <a href="#">Términos de Servicio</a>
-          <a href="#">Descargo de Responsabilidad</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Disclosures</a>
         </div>
       </div>
     </div>
@@ -471,7 +490,7 @@
   <script type="module">
     // Helper to format currency
     function formatCurrency(amount) {
-      return new Intl.NumberFormat('es-US', {
+      return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
         maximumFractionDigits: 0
@@ -492,7 +511,6 @@
         const targetContainer = document.getElementById(containerId);
         if (targetContainer) {
           targetContainer.classList.add('active');
-          // Re-trigger scroll animations inside the container
           targetContainer.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('visible'));
         }
       });
@@ -518,10 +536,9 @@
       const age = parseInt(inputAge.value);
       const retire = parseInt(inputRetire.value);
       
-      // Keep retirement age equal or higher than current age
       if (retire < age) {
         inputRetire.value = age;
-        valRetire.textContent = age + ' años';
+        valRetire.textContent = age + ' years';
       }
       
       const years = Math.max(0, parseInt(inputRetire.value) - age);
@@ -529,11 +546,11 @@
       const monthly = parseFloat(inputMonthly.value) || 0;
       const rate = (parseFloat(inputReturn.value) || 0) / 100;
       
-      valAge.textContent = age + ' años';
-      valRetire.textContent = inputRetire.value + ' años';
+      valAge.textContent = age + ' years';
+      valRetire.textContent = inputRetire.value + ' years';
       valReturn.textContent = inputReturn.value + '%';
       
-      outYears.textContent = years + ' años';
+      outYears.textContent = years + ' years';
       
       if (years === 0) {
         outTotal.textContent = formatCurrency(currentSavings);
@@ -542,11 +559,7 @@
         return;
       }
       
-      // FVs
-      // Current savings compound: PV * (1 + r)^y
       const fvSavings = currentSavings * Math.pow(1 + rate, years);
-      
-      // Monthly contributions compound: M * [((1 + r/12)^(n*12) - 1) / (r/12)] * (1 + r/12)
       const months = years * 12;
       const monthlyRate = rate / 12;
       let fvContributions = 0;
@@ -590,11 +603,10 @@
       const initial = parseFloat(goalInitial.value) || 0;
       const rate = (parseFloat(goalReturn.value) || 0) / 100;
       
-      valGoalYears.textContent = years + ' años';
+      valGoalYears.textContent = years + ' years';
       valGoalReturn.textContent = goalReturn.value + '%';
       resGoalTarget.textContent = formatCurrency(target);
       
-      // Keep initial savings below or equal to target
       if (initial > target) {
         goalInitial.value = target;
       }
@@ -602,7 +614,6 @@
       const months = years * 12;
       const monthlyRate = rate / 12;
       
-      // FV of initial savings
       const fvInitial = initial * Math.pow(1 + rate, years);
       const remainingGoal = Math.max(0, target - fvInitial);
       
@@ -620,10 +631,9 @@
       outGoalMonthly.textContent = formatCurrency(monthlyRequired);
       resGoalContributed.textContent = formatCurrency(totalContributed);
       
-      // Progress calculation
       const progressPercent = Math.min(100, (initial / target) * 100);
       goalProgressBar.style.width = progressPercent + '%';
-      goalProgressTxt.textContent = `Ahorro inicial cubre el ${progressPercent.toFixed(1)}% de la meta final.`;
+      goalProgressTxt.textContent = `Initial savings cover ${progressPercent.toFixed(1)}% of the target.`;
     }
     
     [goalAmount, goalYears, goalInitial, goalReturn].forEach(el => {
@@ -649,7 +659,7 @@
       const finalExp = parseFloat(lifeFinal.value) || 0;
       const existing = parseFloat(lifeExisting.value) || 0;
       
-      valLifeYears.textContent = years + ' años';
+      valLifeYears.textContent = years + ' years';
       resLifeExisting.textContent = formatCurrency(existing);
       
       const incomeReplacement = income * years;
@@ -664,7 +674,6 @@
       el.addEventListener('input', calcLife);
     });
     
-    // Run initial calculations on page load
     calcRetirement();
     calcGoal();
     calcLife();

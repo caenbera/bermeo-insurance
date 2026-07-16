@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artículos y Educación Patrimonial — Bermeo Insurance</title>
-  <meta name="description" content="Explore nuestra biblioteca editorial sobre planificación de retiro, optimización de impuestos, finanzas familiares e inversiones corporativas.">
+  <title>Articles & Wealth Education — Bermeo Insurance</title>
+  <meta name="description" content="Explore our editorial library covering retirement planning, tax optimization, family finance, and corporate insurance.">
   
   <!-- Favicons and Web App Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -105,7 +105,6 @@
       background-color: var(--color-white);
       max-width: 800px;
       width: 100%;
-      max-height: 90px;
       max-height: calc(100vh - 4rem);
       overflow-y: auto;
       border-radius: var(--radius-card);
@@ -138,28 +137,48 @@
     <div class="container header-container">
       <a href="/index.html" class="logo-wrapper">
         <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
-        <div class="logo-text">BERMEO<span>.</span></div>
       </a>
       
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
         <i data-lucide="menu"></i>
       </button>
       
       <nav id="navMenu">
         <ul>
-          <li><a href="/index.html">Inicio</a></li>
-          <li><a href="/productos.html">Productos</a></li>
-          <li><a href="/servicios.html">Servicios</a></li>
-          <li><a href="/about-us.html">Nosotros</a></li>
-          <li><a href="/calculators.html">Calculadoras</a></li>
-          <li><a href="/articles.html" class="active">Artículos</a></li>
-          <li><a href="/videos.html">Videos</a></li>
-          <li><a href="/tax.html">Impuestos</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Products & Services <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/products.html" class="dropdown-item"><i data-lucide="shield"></i> Products</a>
+              <a href="/services.html" class="dropdown-item"><i data-lucide="landmark"></i> Services</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="active">Resources <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/calculators.html" class="dropdown-item"><i data-lucide="calculator"></i> Calculators</a>
+              <a href="/articles.html" class="dropdown-item"><i data-lucide="book-open"></i> Articles</a>
+              <a href="/tax-resources.html" class="dropdown-item"><i data-lucide="file-text"></i> Tax Resources</a>
+              <a href="/videos.html" class="dropdown-item"><i data-lucide="play"></i> Videos</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Account Access <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.mynyl.newyorklife.com" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYL Online Account</a>
+              <a href="https://investor.wealthscape.com/NYLIFEsecurities/investor-index.html" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYLIFE Securities</a>
+              <a href="https://secureaccountview.com/BFWeb/clients/nylifunds/index" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> MainStay Mutual Funds</a>
+            </div>
+          </li>
         </ul>
       </nav>
       
       <div class="nav-cta">
-        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contactar</a>
+        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contact Us</a>
       </div>
     </div>
   </header>
@@ -169,15 +188,15 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="breadcrumb">
-        <a href="/index.html">Inicio</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Artículos</span>
+        <a href="/index.html">Home</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Articles</span>
       </div>
-      <h1 class="hero-title">Biblioteca de Finanzas y Educación Patrimonial</h1>
+      <h1 class="hero-title">Wealth Insights & Education</h1>
       <p class="hero-subtitle subtitle" style="color: rgba(255,255,255,0.85);">
-        Artículos editoriales de alta gama enfocados en la estructuración de capital y planificación de vida familiar.
+        Academic and practical editorials focused on capital structuring, tax mitigation, and family legacy planning.
       </p>
       <div class="hero-ctas">
-        <a href="#articulos-grid" class="btn btn-primary">Ver Artículos</a>
-        <a href="/contact-us.html" class="btn btn-secondary">Suscribirse al Boletín</a>
+        <a href="#articulos-grid" class="btn btn-primary">View Articles</a>
+        <a href="/contact-us.html" class="btn btn-secondary">Subscribe to Newsletter</a>
       </div>
     </div>
   </section>
@@ -191,51 +210,51 @@
         <!-- Article 1: Marriage -->
         <div class="article-card animate-on-scroll" data-article-id="marriage">
           <div class="article-img-wrapper">
-            <img src="/src/assets/value.jpg" alt="Matrimonio y finanzas" class="article-img">
-            <div class="article-badge">Familia</div>
+            <img src="/src/assets/value.jpg" alt="Marriage and finances" class="article-img">
+            <div class="article-badge">Family</div>
           </div>
           <div class="article-body">
             <div>
-              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">¿Debería combinar sus finanzas después de casarse?</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Should you combine your finances after getting married?</h3>
               <p class="small-text" style="margin-bottom: 1.5rem;">
-                Explora las estructuras de cuentas conjuntas, la separación de bienes y las ventajas impositivas de la planificación financiera integrada en el matrimonio.
+                Explore joint account structures, separation of assets, and the tax benefits of integrated financial planning in marriage.
               </p>
             </div>
-            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Leer Artículo <i data-lucide="arrow-right"></i></button>
+            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Read Article <i data-lucide="arrow-right"></i></button>
           </div>
         </div>
 
         <!-- Article 2: Retirement Taxes -->
         <div class="article-card animate-on-scroll delay-100" data-article-id="tax-retirement">
           <div class="article-img-wrapper">
-            <img src="/src/assets/10-ways.jpg" alt="Ahorro de impuestos en retiro" class="article-img">
-            <div class="article-badge">Impuestos</div>
+            <img src="/src/assets/10-ways.jpg" alt="Tax savings in retirement" class="article-img">
+            <div class="article-badge">Taxes</div>
           </div>
           <div class="article-body">
             <div>
-              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">4 formas de reducir su factura de impuestos en el retiro</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">4 ways to cut your tax bill in retirement</h3>
               <p class="small-text" style="margin-bottom: 1.5rem;">
-                Planificación fiscal avanzada: cómo realizar retiros estratégicos de planes de jubilación y estructurar inversiones con ventajas fiscales.
+                Strategic tax planning: how to make optimal withdrawals from retirement accounts and structure tax-exempt investments.
               </p>
             </div>
-            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Leer Artículo <i data-lucide="arrow-right"></i></button>
+            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Read Article <i data-lucide="arrow-right"></i></button>
           </div>
         </div>
 
         <!-- Article 3: High school grad -->
         <div class="article-card animate-on-scroll delay-200" data-article-id="graduate">
           <div class="article-img-wrapper">
-            <img src="/src/assets/human-capital.jpg" alt="Graduado de secundaria finanzas" class="article-img">
-            <div class="article-badge">Educación</div>
+            <img src="/src/assets/human-capital.jpg" alt="High school graduate finance basics" class="article-img">
+            <div class="article-badge">Education</div>
           </div>
           <div class="article-body">
             <div>
-              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Conceptos básicos de finanzas para su graduado de secundaria</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Financial basics for your high school graduate</h3>
               <p class="small-text" style="margin-bottom: 1.5rem;">
-                Prepare a sus hijos para la independencia financiera. Instrucciones clave sobre el crédito bancario, el ahorro temprano y la inversión inicial.
+                Prepare your children for financial independence. Key guidance on banking credit, early savings, and initial investing.
               </p>
             </div>
-            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Leer Artículo <i data-lucide="arrow-right"></i></button>
+            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Read Article <i data-lucide="arrow-right"></i></button>
           </div>
         </div>
 
@@ -245,16 +264,16 @@
             <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #1a2233 100%); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:var(--color-gold);">
               <i data-lucide="shield" style="width:64px;height:64px;opacity:0.3;"></i>
             </div>
-            <div class="article-badge">Planificación</div>
+            <div class="article-badge">Planning</div>
           </div>
           <div class="article-body">
             <div>
-              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">5 pasos hacia la libertad financiera después del divorcio</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">5 steps to financial freedom after divorce</h3>
               <p class="small-text" style="margin-bottom: 1.5rem;">
-                Guía analítica para reestructurar sus bienes, revaluar beneficiarios en seguros de vida y rediseñar su estrategia patrimonial individual.
+                Analytical guide to restructuring assets, updating life insurance beneficiaries, and redesigning your individual wealth strategy.
               </p>
             </div>
-            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Leer Artículo <i data-lucide="arrow-right"></i></button>
+            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Read Article <i data-lucide="arrow-right"></i></button>
           </div>
         </div>
 
@@ -264,16 +283,16 @@
             <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #1a2233 100%); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:var(--color-gold);">
               <i data-lucide="trending-up" style="width:64px;height:64px;opacity:0.3;"></i>
             </div>
-            <div class="article-badge">Gestión</div>
+            <div class="article-badge">Management</div>
           </div>
           <div class="article-body">
             <div>
-              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Control sobre sus finanzas del día a día</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Having control over your day-to-day finances</h3>
               <p class="small-text" style="margin-bottom: 1.5rem;">
-                Metodologías avanzadas de optimización de flujo de caja ejecutivo y balances presupuestarios para mitigar ineficiencias de capital.
+                Advanced methodologies of executive cash flow management and budget balancing to mitigate capital inefficiencies.
               </p>
             </div>
-            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Leer Artículo <i data-lucide="arrow-right"></i></button>
+            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Read Article <i data-lucide="arrow-right"></i></button>
           </div>
         </div>
 
@@ -283,16 +302,16 @@
             <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #1a2233 100%); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:var(--color-gold);">
               <i data-lucide="landmark" style="width:64px;height:64px;opacity:0.3;"></i>
             </div>
-            <div class="article-badge">Ahorro</div>
+            <div class="article-badge">Savings</div>
           </div>
           <div class="article-body">
             <div>
-              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Presupuestos para quienes no les gustan los presupuestos</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Budgeting for a non-budgeter</h3>
               <p class="small-text" style="margin-bottom: 1.5rem;">
-                Cómo automatizar el ahorro de inversión institucional y aplicar reglas financieras proporcionales sin la carga de plantillas tediosas.
+                How to automate institutional investment savings and apply proportional wealth distribution rules without complex spreadsheets.
               </p>
             </div>
-            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Leer Artículo <i data-lucide="arrow-right"></i></button>
+            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Read Article <i data-lucide="arrow-right"></i></button>
           </div>
         </div>
 
@@ -302,16 +321,16 @@
             <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #1a2233 100%); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:var(--color-gold);">
               <i data-lucide="heart-handshake" style="width:64px;height:64px;opacity:0.3;"></i>
             </div>
-            <div class="article-badge">Familia</div>
+            <div class="article-badge">Family</div>
           </div>
           <div class="article-body">
             <div>
-              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Iniciar una familia: el costo total de un bebé</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem;">Starting a family: the total cost of a baby</h3>
               <p class="small-text" style="margin-bottom: 1.5rem;">
-                Planificación estratégica: seguros médicos premium, optimización del fondo educativo 529 y revaluación de pólizas de vida familiares.
+                Strategic planning: premium health insurance coverage, 529 education savings fund optimization, and family life insurance updates.
               </p>
             </div>
-            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Leer Artículo <i data-lucide="arrow-right"></i></button>
+            <button class="btn btn-secondary btn-sm read-btn" style="width:100%;">Read Article <i data-lucide="arrow-right"></i></button>
           </div>
         </div>
 
@@ -322,7 +341,7 @@
   <!-- ARTICLE READER MODAL (DYNAMIC) -->
   <div class="article-modal" id="articleModal">
     <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Cerrar artículo">
+      <button class="modal-close" id="modalClose" aria-label="Close article">
         <i data-lucide="x"></i>
       </button>
       
@@ -341,10 +360,9 @@
         <div class="footer-logo-desc">
           <a href="/index.html" class="logo-wrapper">
             <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
-            <div class="logo-text" style="color: var(--color-white);">BERMEO<span>.</span></div>
           </a>
           <p class="footer-desc">
-            Asesoría sofisticada y seguros de alta gama para salvaguardar el patrimonio familiar, optimizar planes de retiro y asegurar un legado impecable.
+            Sophisticated advisory and premium insurance solutions designed to safeguard family wealth, optimize retirement planning, and secure an impeccable legacy.
           </p>
           <div class="footer-socials">
             <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="users"></i></a>
@@ -355,29 +373,29 @@
         
         <!-- Col 2: Navigation Links -->
         <div class="footer-col">
-          <h4>Explorar</h4>
+          <h4>Explore</h4>
           <ul class="footer-links">
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/productos.html">Productos Premium</a></li>
-            <li><a href="/servicios.html">Servicios Financieros</a></li>
-            <li><a href="/about-us.html">Nosotros</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">About Us</a></li>
+            <li><a href="/products.html">Premium Products</a></li>
+            <li><a href="/services.html">Financial Services</a></li>
           </ul>
         </div>
         
         <!-- Col 3: Resources Links -->
         <div class="footer-col">
-          <h4>Recursos</h4>
+          <h4>Resources</h4>
           <ul class="footer-links">
-            <li><a href="/calculators.html">Calculadoras Financieras</a></li>
-            <li><a href="/articles.html">Artículos Educativos</a></li>
-            <li><a href="/videos.html">Videos Explicativos</a></li>
-            <li><a href="/tax.html">Recursos de Impuestos</a></li>
+            <li><a href="/calculators.html">Financial Calculators</a></li>
+            <li><a href="/articles.html">Educational Articles</a></li>
+            <li><a href="/tax-resources.html">Tax Resources</a></li>
+            <li><a href="/videos.html">Explanatory Videos</a></li>
           </ul>
         </div>
         
         <!-- Col 4: Contact info -->
         <div class="footer-col">
-          <h4>Contacto</h4>
+          <h4>Contact</h4>
           <ul class="footer-contact-list">
             <li>
               <i data-lucide="phone"></i>
@@ -385,7 +403,7 @@
             </li>
             <li>
               <i data-lucide="mail"></i>
-              <span>contacto@bermeoinsurance.com</span>
+              <span>contact@bermeoinsurance.com</span>
             </li>
             <li>
               <i data-lucide="map-pin"></i>
@@ -398,11 +416,11 @@
       
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. All rights reserved.</p>
         <div class="footer-bottom-links">
-          <a href="#">Política de Privacidad</a>
-          <a href="#">Términos de Servicio</a>
-          <a href="#">Descargo de Responsabilidad</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Disclosures</a>
         </div>
       </div>
     </div>
@@ -415,129 +433,129 @@
   <script type="module">
     import { initIcons } from '/src/main.js';
     
-    // Articles Database
+    // Articles Database (English)
     const articlesDB = {
       marriage: {
-        title: "¿Debería combinar sus finanzas después de casarse?",
-        category: "Familia",
-        date: "Julio 10, 2026",
+        title: "Should you combine your finances after getting married?",
+        category: "Family",
+        date: "July 10, 2026",
         content: `
-          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">La decisión de unificar patrimonios o mantener cuentas separadas tras el matrimonio no es meramente administrativa, sino una cuestión estratégica de optimización tributaria y planificación de vida.</p>
+          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">The decision to unify assets or maintain separate accounts after marriage is not merely administrative, but a strategic question of tax optimization and lifetime goal alignment.</p>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. Estructuras de Cuentas: Las Opciones Comunes</h4>
-          <p style="margin-bottom: 1.25rem;">Existen tres esquemas habituales para la administración del efectivo en pareja:</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. Account Structures: The Standard Options</h4>
+          <p style="margin-bottom: 1.25rem;">Couples generally choose from three primary cash management frameworks:</p>
           <ul style="margin-left: 2rem; margin-bottom: 1.5rem; display:flex; flex-direction:column; gap:0.5rem;">
-            <li><strong>Unificación total:</strong> Todos los ingresos se depositan en cuentas mancomunadas. Facilita la visibilidad total pero requiere altos niveles de alineamiento.</li>
-            <li><strong>Separación total:</strong> Cada cónyuge mantiene control individual sobre su patrimonio, contribuyendo proporcionalmente a los gastos compartidos.</li>
-            <li><strong>El modelo híbrido:</strong> Cuentas separadas para gastos personales y una cuenta compartida para deudas conjuntas, hipotecas y manutención familiar.</li>
+            <li><strong>Total Unification:</strong> All income streams are deposited into joint checking and savings accounts. This provides complete visibility but requires high alignment on spending.</li>
+            <li><strong>Total Separation:</strong> Each partner maintains individual control over their wealth and accounts, contributing proportionally to shared household expenses.</li>
+            <li><strong>The Hybrid Model:</strong> Separate accounts for personal discretionary spending, combined with a shared joint account for mortgages, family bills, and child-rearing.</li>
           </ul>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. Implicaciones Fiscales e IRS</h4>
-          <p style="margin-bottom: 1.25rem;">Presentar la declaración de impuestos conjunta (Married Filing Jointly) suele ofrecer deducciones estándar más altas y límites de tramos impositivos más holgados en comparación con declaraciones separadas. No obstante, si uno de los cónyuges tiene pasivos fiscales históricos, deudas de préstamos estudiantiles con pagos basados en ingresos o deducciones médicas considerables, realizar declaraciones individuales puede resultar óptimo.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. Tax & IRS Implications</h4>
+          <p style="margin-bottom: 1.25rem;">Filing joint tax returns (Married Filing Jointly) typically yields higher standard deductions and wider tax bracket margins than filing separately. However, if one spouse carries historic tax liabilities, back taxes, or has significant income-driven student loans, filing separately may be mathematically superior.</p>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Protección de Activos y Sucesión</h4>
-          <p style="margin-bottom: 1.25rem;">Para personas de alto patrimonio neto, es fundamental coordinar acuerdos prenupciales o posnupciales con fideicomisos sucesorios (trusts). Esto asegura que los bienes heredados o los activos empresariales previos al matrimonio queden blindados, garantizando la preservación del patrimonio para descendientes de linajes previos en caso de disolución conyugal.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Asset Protection & Estate Planning</h4>
+          <p style="margin-bottom: 1.25rem;">For high-net-worth individuals, it is critical to align prenuptial or postnuptial agreements with estate trusts. This ensures inherited assets or corporate business interests remain insulated, securing the family wealth for children of prior lineages if dissolution occurs.</p>
         `
       },
       "tax-retirement": {
-        title: "4 formas de reducir su factura de impuestos en el retiro",
-        category: "Impuestos",
-        date: "Junio 28, 2026",
+        title: "4 ways to cut your tax bill in retirement",
+        category: "Taxes",
+        date: "June 28, 2026",
         content: `
-          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">Alcanzar el retiro con un patrimonio sólido es solo el primer paso. El verdadero desafío consiste en distribuir ese capital minimizando el impacto impositivo.</p>
+          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">Reaching retirement with a healthy nest egg is only the first step. The true challenge is distributing that wealth while minimizing tax exposure.</p>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. Diversificación Fiscal Preventiva</h4>
-          <p style="margin-bottom: 1.25rem;">Estructurar un portafolio de retiro distribuido en tres canastas fiscales le otorga flexibilidad:</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. Pre-Retirement Tax Diversification</h4>
+          <p style="margin-bottom: 1.25rem;">By spreading your nest egg across three distinct tax buckets, you gain withdrawal flexibility:</p>
           <ul style="margin-left: 2rem; margin-bottom: 1.5rem; display:flex; flex-direction:column; gap:0.5rem;">
-            <li><strong>Tributable en distribución:</strong> Cuentas tradicionales 401(k) e IRA.</li>
-            <li><strong>Libre de impuestos:</strong> Roth 401(k) e Roth IRA.</li>
-            <li><strong>Sujeta a Ganancias de Capital:</strong> Cuentas personales de corretaje.</li>
+            <li><strong>Tax-Deferred:</strong> Traditional 401(k) and IRA accounts (taxed upon withdrawal).</li>
+            <li><strong>Tax-Free:</strong> Roth 401(k) and Roth IRA accounts (withdrawn tax-free).</li>
+            <li><strong>Taxable/Capital Gains:</strong> Personal brokerage accounts (subject to preferential capital gains rates).</li>
           </ul>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. Conversiones Estratégicas a Roth</h4>
-          <p style="margin-bottom: 1.25rem;">Realizar conversiones sistemáticas de fondos tradicionales a Roth durante años fiscales con bajos ingresos gravables. Aunque se pagan impuestos al momento de la conversión, el capital resultante crece y se distribuye libre de impuestos de por vida, eliminando además el impacto de las Distribuciones Mínimas Requeridas (RMD).</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. Strategic Roth Conversions</h4>
+          <p style="margin-bottom: 1.25rem;">Convert traditional IRA assets into Roth assets systematically during years when you fall into a lower marginal tax bracket. While you pay tax on the converted amount now, the assets grow and distribute completely tax-free for the rest of your life, and are exempt from Required Minimum Distributions (RMDs).</p>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Donaciones Directas Calificadas (QCD)</h4>
-          <p style="margin-bottom: 1.25rem;">A partir de los 70½ años, la IRS permite transferir hasta $105,000 anuales directamente de un IRA tradicional a una organización benéfica calificada. Este retiro se excluye de su Ingreso Bruto Ajustado (AGI), reduciendo directamente su carga impositiva y cumpliendo con sus metas de filantropía familiar.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Qualified Charitable Distributions (QCDs)</h4>
+          <p style="margin-bottom: 1.25rem;">If you are 70½ or older, the IRS allows you to transfer up to $105,000 annually directly from a traditional IRA to an approved charity. The QCD counts toward your RMD but is excluded from your Adjusted Gross Income (AGI), preventing increases in your tax bracket and Medicare premiums.</p>
         `
       },
       graduate: {
-        title: "Conceptos básicos de finanzas para su graduado de secundaria",
-        category: "Educación",
-        date: "Mayo 15, 2026",
+        title: "Financial basics for your high school graduate",
+        category: "Education",
+        date: "May 15, 2026",
         content: `
-          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">El mejor regalo de graduación para su hijo no es material, sino la alfabetización financiera necesaria para tomar decisiones patrimoniales maduras.</p>
+          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">The most impactful graduation gift you can give your child is the financial literacy necessary to manage assets and build wealth early in life.</p>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. El Funcionamiento del Interés Compuesto</h4>
-          <p style="margin-bottom: 1.25rem;">Enseñar a los jóvenes que el tiempo es su mayor activo de inversión. Un dólar invertido a los 18 años tiene un potencial de multiplicación sustancialmente mayor que el mismo dólar invertido a los 35. Introducirlos en vehículos de ahorro automatizados y cuentas Roth IRA (si tienen ingresos declarados por trabajo).</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. The Power of Compound Interest</h4>
+          <p style="margin-bottom: 1.25rem;">Teach graduates that time is their greatest asset. One dollar invested at age 18 has significantly more compound growth potential than the same dollar invested at age 35. Help them establish an automated savings pattern and introduce them to Roth IRAs if they have earned income.</p>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. La Arquitectura del Crédito</h4>
-          <p style="margin-bottom: 1.25rem;">Instruirles sobre cómo el puntaje de crédito (FICO Score) determina el costo de sus préstamos futuros, pólizas de seguros e incluso ofertas de empleo. Claves básicas:</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. The Anatomy of a Credit Score</h4>
+          <p style="margin-bottom: 1.25rem;">Explain how a credit score (FICO) dictates the cost of car loans, mortgages, insurance premiums, and even hiring decisions. Instill three core habits:</p>
           <ul style="margin-left: 2rem; margin-bottom: 1.5rem; display:flex; flex-direction:column; gap:0.5rem;">
-            <li>Pagar siempre el balance total de las tarjetas mensualmente, antes de la fecha límite.</li>
-            <li>No utilizar más del 10%-30% del límite de crédito otorgado.</li>
-            <li>Mantener cuentas de crédito antiguas abiertas para preservar el historial.</li>
+            <li>Always pay the statement balance in full every month before the due date.</li>
+            <li>Keep credit utilization low (under 10% to 30% of the limit).</li>
+            <li>Keep older credit card lines open to maintain length of credit history.</li>
           </ul>
           
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. El Presupuesto de Flujo Inverso</h4>
-          <p style="margin-bottom: 1.25rem;">En lugar de detallar cada centavo, enseñarles la regla de "Páguese a usted mismo primero": descontar un 20% para ahorros e inversiones de manera automática al recibir cualquier ingreso, y vivir holgadamente con el 80% restante.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Pay Yourself First</h4>
+          <p style="margin-bottom: 1.25rem;">Rather than budgeting every dollar, teach them the "reverse budget": automatically route 20% of any paycheck to savings and investments first, and live comfortably on the remaining 80% without feeling guilty.</p>
         `
       },
       divorce: {
-        title: "5 pasos hacia la libertad financiera después del divorcio",
-        category: "Planificación",
-        date: "Abril 04, 2026",
+        title: "5 steps to financial freedom after divorce",
+        category: "Planning",
+        date: "April 04, 2026",
         content: `
-          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">Un divorcio representa una fractura personal e inevitablemente una reorganización de activos y pasivos. Dar los pasos correctos garantiza su tranquilidad patrimonial.</p>
-          <p style="margin-bottom: 1.25rem;"><strong>Paso 1: Auditoría de Bienes y Pasivos Conjuntos.</strong> Cierre o desvincule cuentas bancarias, hipotecas y tarjetas compartidas para evitar que la deuda de su expareja afecte su perfil crediticio.</p>
-          <p style="margin-bottom: 1.25rem;"><strong>Paso 2: Actualización de Beneficiarios.</strong> Revise y modifique los beneficiarios designados en sus seguros de vida, cuentas IRA, 401(k) y fideicomisos. Por ley, estos contratos se pagan a la persona listada, independientemente de lo estipulado en la sentencia de divorcio.</p>
-          <p style="margin-bottom: 1.25rem;"><strong>Paso 3: División de Cuentas de Retiro (QDRO).</strong> Asegúrese de tramitar una Orden de Relaciones Domésticas Calificada (QDRO) para dividir saldos de pensiones o planes corporativos de jubilación sin incurrir en penalizaciones por retiros anticipados ni cargas fiscales inmediatas.</p>
-          <p style="margin-bottom: 1.25rem;"><strong>Paso 4: Redefinición del Presupuesto y Coberturas.</strong> Revalúe sus metas financieras de manera individual y contrate seguros de discapacidad o vida independientes para compensar cualquier cese de pensiones alimenticias en caso de fallecimiento de la contraparte.</p>
-          <p style="margin-bottom: 1.25rem;"><strong>Paso 5: Reconstrucción del Historial Crediticio.</strong> Establezca líneas de crédito a su nombre exclusivo y vigile su FICO Score de manera activa.</p>
+          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">Divorce represents both a personal transition and a massive reallocation of assets. Taking organized steps ensures your long-term wealth remains secure.</p>
+          <p style="margin-bottom: 1.25rem;"><strong>Step 1: Audit Joint Assets & Liabilities.</strong> Close joint credit cards, remove your name from shared loans, and partition joint bank accounts to insulate your credit score from your ex-spouse's future financial behaviors.</p>
+          <p style="margin-bottom: 1.25rem;"><strong>Step 2: Update Beneficiary Designations.</strong> Review and change beneficiary listings on life insurance policies, IRAs, 401(k)s, and trust documents. Legally, these accounts pay out to the person on file, regardless of what is written in your divorce decree.</p>
+          <p style="margin-bottom: 1.25rem;"><strong>Step 3: Secure a Qualified Domestic Relations Order (QDRO).</strong> Ensure your legal team executes a QDRO to divide pensions or corporate retirement accounts. This allows assets to be transferred without triggering early withdrawal penalties or immediate tax burdens.</p>
+          <p style="margin-bottom: 1.25rem;"><strong>Step 4: Establish Independent Coverages.</strong> Reassess your insurance requirements. Consider purchasing disability or term life policies to replace alimony or child support obligations in case of your ex-spouse's untimely death.</p>
+          <p style="margin-bottom: 1.25rem;"><strong>Step 5: Rebuild Your Personal Credit History.</strong> Open lines of credit exclusively under your name and monitor your credit profile actively.</p>
         `
       },
       "day-to-day": {
-        title: "Control sobre sus finanzas del día a día",
-        category: "Gestión",
-        date: "Marzo 12, 2026",
+        title: "Having control over your day-to-day finances",
+        category: "Management",
+        date: "March 12, 2026",
         content: `
-          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">La gestión financiera personal exitosa para ejecutivos de alta gama no se limita a ganar sumas considerables, sino a optimizar el flujo de caja diario de forma científica.</p>
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. El Fondo de Reserva Dinámica</h4>
-          <p style="margin-bottom: 1.25rem;">Los asesores tradicionales sugieren 3 a 6 meses de gastos básicos. Para ejecutivos con esquemas de compensación variable (bonos, stock options), sugerimos 9 a 12 meses de costos operativos fijos mantenidos en vehículos de alta liquidez y rendimiento neto (cuentas de ahorro de alto rendimiento o fondos del mercado monetario).</p>
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. Automatización del Flujo de Excedentes</h4>
-          <p style="margin-bottom: 1.25rem;">Estructurar transferencias recurrentes el día de cobro hacia sus cuentas de inversión. De esta manera, el capital sobrante trabaja inmediatamente evitando la tentación del gasto discrecional.</p>
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Consolidación de Cuentas y Visibilidad</h4>
-          <p style="margin-bottom: 1.25rem;">Utilice agregadores de patrimonio consolidados para monitorear en tiempo real el patrimonio neto distribuido en múltiples bancos y casas de corretaje, identificando ineficiencias de efectivo no invertido.</p>
+          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">Exceptional cash flow management for high-earning executives is less about restriction and more about streamlining and capital efficiency.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. The Dynamic Cash Reserve</h4>
+          <p style="margin-bottom: 1.25rem;">While standard advice recommends 3 to 6 months of expenses, executives with variable compensation (stock grants, performance bonuses) should maintain 9 to 12 months of fixed costs in highly liquid, yield-bearing accounts (HYSA or Money Market Funds).</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. Automated Wealth Sweeping</h4>
+          <p style="margin-bottom: 1.25rem;">Establish automatic sweeps that route surplus checking account cash above a certain threshold directly into your investment brokerage. This keeps cash working immediately and prevents lifestyle creep.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Consolidated Wealth Dashboards</h4>
+          <p style="margin-bottom: 1.25rem;">Utilize aggregated personal finance platforms to view your complete net worth in real-time across multiple custodians, helping you identify idle cash and reallocate resources efficiently.</p>
         `
       },
       budgeter: {
-        title: "Presupuestos para quienes no les gustan los presupuestos",
-        category: "Ahorro",
-        date: "Febrero 20, 2026",
+        title: "Budgeting for a non-budgeter",
+        category: "Savings",
+        date: "February 20, 2026",
         content: `
-          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">Llevar un registro diario de cada café es insostenible. Diseñamos un método de distribución de riqueza simplificado, basado en proporciones macro.</p>
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">El Método 50/30/20 Optimizado</h4>
-          <p style="margin-bottom: 1.25rem;">Divida sus ingresos netos en tres grandes categorías:</p>
+          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">Tracking every receipt is a recipe for burnout. We advocate a macro-distribution method that manages wealth by proportions.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">The Optimized 50/30/20 Rule</h4>
+          <p style="margin-bottom: 1.25rem;">Segment your net monthly income into three simple buckets:</p>
           <ul style="margin-left: 2rem; margin-bottom: 1.5rem; display:flex; flex-direction:column; gap:0.5rem;">
-            <li><strong>50% Necesidades:</strong> Vivienda, transporte, seguros de salud/vida y deudas mínimas.</li>
-            <li><strong>20% Ahorro e Inversión:</strong> Fondos de retiro, corretaje personal y amortizaciones aceleradas de deudas.</li>
-            <li><strong>30% Estilo de Vida:</strong> Gastos discrecionales, vacaciones, restaurantes y membresías.</li>
+            <li><strong>50% Needs:</strong> Housing, groceries, debt minimums, utilities, and essential insurance premiums (health, life).</li>
+            <li><strong>20% Savings & Investment:</strong> Wealth accumulation, extra retirement contributions, personal brokerage, and principal debt paydown.</li>
+            <li><strong>30% Lifestyle:</strong> Dining out, vacations, entertainment, shopping, and discretionary hobbies.</li>
           </ul>
-          <p style="margin-bottom: 1.25rem;">Para ejecutar este plan, configure transferencias bancarias automatizadas: al recibir su ingreso, el 20% se transfiere automáticamente a inversión y el 50% se utiliza para debitar facturas fijas. El saldo remanente es su fondo de estilo de vida libre de culpa.</p>
+          <p style="margin-bottom: 1.25rem;">Automate this process completely: on payday, 20% sweeps to your brokerage, 50% routes to a bill-paying account, and the remaining 30% is left in your primary account to spend guilt-free.</p>
         `
       },
       "baby-cost": {
-        title: "Iniciar una familia: el costo total de un bebé",
-        category: "Familia",
-        date: "Enero 05, 2026",
+        title: "Starting a family: the total cost of a baby",
+        category: "Family",
+        date: "January 05, 2026",
         content: `
-          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">La llegada de un hijo transforma prioridades y exige una reestructuración inmediata de la matriz de seguros y protección patrimonial familiar.</p>
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. Blindaje Médico y Coberturas</h4>
-          <p style="margin-bottom: 1.25rem;">Revise los límites de su póliza de seguro médico de grupo o individual para cubrir la maternidad y los cuidados neonatales del lactante. Inscriba al bebé en la póliza durante el periodo de inscripción especial de 30 días posteriores al nacimiento.</p>
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. Multiplicación de Sumas Aseguradas en Seguros de Vida</h4>
-          <p style="margin-bottom: 1.25rem;">Un recién nacido representa una dependencia económica total durante un mínimo de 18 a 22 años. Utilice la calculadora de Bermeo para elevar su seguro de vida temporal cubriendo la manutención completa y gastos universitarios proyectados.</p>
-          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Planes de Ahorro para Educación 529</h4>
-          <p style="margin-bottom: 1.25rem;">Establezca una cuenta de ahorro educativo patrocinada por el estado (529 Plan) de manera temprana. Las contribuciones crecen libres de impuestos federales y los retiros para matrículas universitarias y de escuelas privadas son completamente exentos de tasas fiscales.</p>
+          <p class="subtitle" style="margin-bottom: 2rem; line-height: 1.6;">Welcoming a child is a profound life milestone that requires an immediate restructure of your family's insurance and capital allocation strategy.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">1. Healthcare Auditing</h4>
+          <p style="margin-bottom: 1.25rem;">Review your health insurance plan's out-of-pocket maximums and prenatal/neonatal coverage. Add your newborn to your health policy during the 30-day Special Enrollment Period following birth.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">2. Expanding Life Insurance Sums</h4>
+          <p style="margin-bottom: 1.25rem;">A child represents a full economic dependency for a minimum of 18 to 22 years. Use our life calculator to expand your term life coverage to cover cost-of-living expenses and future higher education fees.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 1.5rem 0 0.75rem 0; color: var(--color-primary);">3. Establishing a 529 College Savings Plan</h4>
+          <p style="margin-bottom: 1.25rem;">Open a state-sponsored 529 education savings account as early as possible. Contributions grow tax-deferred, and withdrawals are completely tax-free when used for qualified higher education expenses or private school tuition.</p>
         `
       }
     };
@@ -557,7 +575,6 @@
           e.stopPropagation();
           const art = articlesDB[articleId];
           
-          // Construct HTML in modal
           modalBody.innerHTML = `
             <span style="color: var(--color-gold); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">
               ${art.category}
@@ -566,27 +583,24 @@
               ${art.title}
             </h2>
             <p class="small-text" style="color: var(--color-text-grey); margin-bottom: 2rem;">
-              Publicado el ${art.date} &bull; Escrito por Bermeo Editorial
+              Published on ${art.date} &bull; Written by Bermeo Editorial Team
             </p>
             <div style="border-top: 1px solid #eee; padding-top: 2rem; color: var(--color-dark-grey); line-height: 1.8;">
               ${art.content}
             </div>
           `;
           
-          // Re-initialize any icons inside the modal if they exist
           initIcons();
           
-          // Open Modal
           articleModal.classList.add('active');
-          document.body.style.overflow = 'hidden'; // Lock background scroll
+          document.body.style.overflow = 'hidden';
         });
       }
     });
     
-    // Close Modal Logic
     function closeModal() {
       articleModal.classList.remove('active');
-      document.body.style.overflow = 'auto'; // Restore scroll
+      document.body.style.overflow = 'auto';
     }
     
     modalClose.addEventListener('click', closeModal);

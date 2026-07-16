@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wealth Planning Services — Bermeo Insurance</title>
+  <meta name="description" content="Discover our solutions in Wealth Management, Tax Optimization, Retirement, and Generational Capital Transfer designed for the sophisticated investor.">
+  
+  <!-- Favicons and Web App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="/src/style.css">
+  
+  <style>
+    .hero-servicios {
+      background-image: url('/src/assets/hero-servicios.png');
+    }
+    
+    .timeline-wrapper {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    
+    .timeline-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 31px;
+      height: 100%;
+      width: 2px;
+      background-color: rgba(200, 154, 61, 0.2);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-left: 80px;
+    }
+    
+    .timeline-badge {
+      position: absolute;
+      top: 0;
+      left: 12px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      border: 2px solid var(--color-gold);
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      z-index: 2;
+    }
+    
+    .timeline-content {
+      background-color: var(--color-white);
+      padding: 2rem;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-premium);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <div class="container header-container">
+      <a href="/index.html" class="logo-wrapper">
+        <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i data-lucide="menu"></i>
+      </button>
+      
+      <nav id="navMenu">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="active">Products & Services <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/products.html" class="dropdown-item"><i data-lucide="shield"></i> Products</a>
+              <a href="/services.html" class="dropdown-item"><i data-lucide="landmark"></i> Services</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Resources <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/calculators.html" class="dropdown-item"><i data-lucide="calculator"></i> Calculators</a>
+              <a href="/articles.html" class="dropdown-item"><i data-lucide="book-open"></i> Articles</a>
+              <a href="/tax-resources.html" class="dropdown-item"><i data-lucide="file-text"></i> Tax Resources</a>
+              <a href="/videos.html" class="dropdown-item"><i data-lucide="play"></i> Videos</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Account Access <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.mynyl.newyorklife.com" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYL Online Account</a>
+              <a href="https://investor.wealthscape.com/NYLIFEsecurities/investor-index.html" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYLIFE Securities</a>
+              <a href="https://secureaccountview.com/BFWeb/clients/nylifunds/index" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> MainStay Mutual Funds</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero hero-servicios">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="breadcrumb">
+        <a href="/index.html">Home</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Services</span>
+      </div>
+      <h1 class="hero-title">Wealth Management & Financial Planning</h1>
+      <p class="hero-subtitle subtitle" style="color: rgba(255,255,255,0.85);">
+        Comprehensive advisory solutions geared toward structured growth, tax optimization, and intergenerational wealth transition.
+      </p>
+      <div class="hero-ctas">
+        <a href="#nuestros-servicios" class="btn btn-primary">Our Services</a>
+        <a href="#proceso" class="btn btn-secondary">Our Process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL GRID -->
+  <section id="nuestros-servicios">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span style="color: var(--color-gold); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">
+          Strategic Specialization
+        </span>
+        <h2 class="section-title">Premium Financial Services</h2>
+        <p class="subtitle">We structure an integrated plan that aligns your wealth with your lifetime goals.</p>
+      </div>
+
+      <div class="grid-12" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+        
+        <!-- Service 1: Wealth Management -->
+        <div class="card animate-on-scroll">
+          <div class="card-icon">
+            <i data-lucide="landmark"></i>
+          </div>
+          <h3 class="card-title">Active Wealth Management</h3>
+          <p style="margin-bottom: 1.25rem;">
+            We develop diversified portfolios to mitigate systemic risks. We actively monitor asset allocation in fixed income, equities, and alternatives matching your specific risk tolerance profile.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #f0f0f0; padding-top: 1rem;" class="small-text">
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Tactical asset allocation</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Risk profile assessment</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Portfolio structuring</li>
+          </ul>
+        </div>
+
+        <!-- Service 2: Retirement Planning -->
+        <div class="card animate-on-scroll delay-100">
+          <div class="card-icon">
+            <i data-lucide="trending-up"></i>
+          </div>
+          <h3 class="card-title">Retirement Planning</h3>
+          <p style="margin-bottom: 1.25rem;">
+            We model financial projections that guarantee stable and recurring income streams in retirement. We optimize corporate and individual retirement accounts (401k, IRA) under tax-advantage structures.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #f0f0f0; padding-top: 1rem;" class="small-text">
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Systematic withdrawal strategies</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Contribution optimization</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Social Security analysis</li>
+          </ul>
+        </div>
+
+        <!-- Service 3: Tax Strategy -->
+        <div class="card animate-on-scroll delay-200">
+          <div class="card-icon">
+            <i data-lucide="file-check"></i>
+          </div>
+          <h3 class="card-title">Tax Optimization</h3>
+          <p style="margin-bottom: 1.25rem;">
+            We analyze the tax burden of your investments and insurance policies to maximize net returns. We structure tax-deferred or tax-exempt investment vehicles aligning with IRS guidelines.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #f0f0f0; padding-top: 1rem;" class="small-text">
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Tax-loss harvesting in investments</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Tax-advantaged insurance products</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Charitable giving advisory</li>
+          </ul>
+        </div>
+
+        <!-- Service 4: Estate Planning -->
+        <div class="card animate-on-scroll delay-300">
+          <div class="card-icon">
+            <i data-lucide="user-check"></i>
+          </div>
+          <h3 class="card-title">Estate Planning</h3>
+          <p style="margin-bottom: 1.25rem;">
+            We safeguard your wealth transition to the next generations efficiently, reducing probate costs and disputes. We design trusts, wills, and business succession plans.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #f0f0f0; padding-top: 1rem;" class="small-text">
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Trust creation & design (ILIT, Living Trusts)</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Corporate Buy-Sell agreement funding</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;"><i data-lucide="check" style="color: var(--color-gold); width:14px; height:14px;"></i> Inheritance and estate tax mitigation</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- THE TIMELINE PROCESS -->
+  <section class="bg-light" id="proceso">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span style="color: var(--color-gold); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">
+          Our Methodology
+        </span>
+        <h2 class="section-title">The Bermeo Process</h2>
+        <p class="subtitle">A structured and rigorous path to ensure excellence at every stage of service.</p>
+      </div>
+
+      <div class="timeline-wrapper">
+        
+        <!-- Step 1 -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-badge">1</div>
+          <div class="timeline-content">
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Discovery and Diagnosis</h3>
+            <p>
+              We meet privately to analyze your current situation in detail: assets, family commitments, corporate structures, personal goals, and risk tolerance. This diagnosis forms the foundation of your plan.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="timeline-item animate-on-scroll delay-100">
+          <div class="timeline-badge">2</div>
+          <div class="timeline-content">
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Bespoke Strategy Design</h3>
+            <p>
+              Our team of analysts and planners models quantitative scenarios and designs a custom strategy. We propose optimal insurance coverages, trust structures, and portfolio allocations for your review.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline-item animate-on-scroll delay-200">
+          <div class="timeline-badge">3</div>
+          <div class="timeline-content">
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Implementation and Coordination</h3>
+            <p>
+              Once the strategy is approved, we proceed to bind high-limit policies, coordinate details with your legal and tax advisors, and allocate capital to selected investment portfolios.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline-item animate-on-scroll delay-300">
+          <div class="timeline-badge">4</div>
+          <div class="timeline-content">
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Active Monitoring & Review</h3>
+            <p>
+              The macroeconomic environment and your life change. We constantly monitor strategy performance and hold periodic review meetings to rebalance portfolios and adjust coverages as needed.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="bg-dark" style="text-align: center;">
+    <div class="container" style="max-width: 700px;">
+      <h2 class="section-title">Begin the path to absolute peace of mind</h2>
+      <p class="subtitle" style="color: rgba(255,255,255,0.7); margin-bottom: 2.5rem;">
+        Schedule a virtual or in-person consultation to discuss your wealth with total discretion and professionalism.
+      </p>
+      <a href="/contact-us.html" class="btn btn-primary btn-lg">Request Advisory Consultation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand -->
+        <div class="footer-logo-desc">
+          <a href="/index.html" class="logo-wrapper">
+            <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
+          </a>
+          <p class="footer-desc">
+            Sophisticated advisory and premium insurance solutions designed to safeguard family wealth, optimize retirement planning, and secure an impeccable legacy.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="users"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="award"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="compass"></i></a>
+          </div>
+        </div>
+        
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">About Us</a></li>
+            <li><a href="/products.html">Premium Products</a></li>
+            <li><a href="/services.html">Financial Services</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 3: Resources Links -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="/calculators.html">Financial Calculators</a></li>
+            <li><a href="/articles.html">Educational Articles</a></li>
+            <li><a href="/tax-resources.html">Tax Resources</a></li>
+            <li><a href="/videos.html">Explanatory Videos</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 4: Contact info -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i data-lucide="phone"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li>
+              <i data-lucide="mail"></i>
+              <span>contact@bermeoinsurance.com</span>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <span>800 Pine St, Suite 2400<br>Seattle, WA 98101</span>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript bundle -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

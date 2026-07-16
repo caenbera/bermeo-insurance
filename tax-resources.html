@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recursos de Impuestos y Guía Fiscal — Bermeo Insurance</title>
-  <meta name="description" content="Acceda a enlaces oficiales del IRS, calendarios tributarios clave y tablas de tasas impositivas federales para optimizar su planeación fiscal.">
+  <title>Tax Resources & Rates — Bermeo Insurance</title>
+  <meta name="description" content="Access official IRS resource links, key tax calendars, and federal income tax bracket tables to optimize your tax planning.">
   
   <!-- Favicons and Web App Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -85,28 +85,48 @@
     <div class="container header-container">
       <a href="/index.html" class="logo-wrapper">
         <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
-        <div class="logo-text">BERMEO<span>.</span></div>
       </a>
       
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
         <i data-lucide="menu"></i>
       </button>
       
       <nav id="navMenu">
         <ul>
-          <li><a href="/index.html">Inicio</a></li>
-          <li><a href="/productos.html">Productos</a></li>
-          <li><a href="/servicios.html">Servicios</a></li>
-          <li><a href="/about-us.html">Nosotros</a></li>
-          <li><a href="/calculators.html">Calculadoras</a></li>
-          <li><a href="/articles.html">Artículos</a></li>
-          <li><a href="/videos.html">Videos</a></li>
-          <li><a href="/tax.html" class="active">Impuestos</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Products & Services <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/products.html" class="dropdown-item"><i data-lucide="shield"></i> Products</a>
+              <a href="/services.html" class="dropdown-item"><i data-lucide="landmark"></i> Services</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="active">Resources <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/calculators.html" class="dropdown-item"><i data-lucide="calculator"></i> Calculators</a>
+              <a href="/articles.html" class="dropdown-item"><i data-lucide="book-open"></i> Articles</a>
+              <a href="/tax-resources.html" class="dropdown-item"><i data-lucide="file-text"></i> Tax Resources</a>
+              <a href="/videos.html" class="dropdown-item"><i data-lucide="play"></i> Videos</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Account Access <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.mynyl.newyorklife.com" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYL Online Account</a>
+              <a href="https://investor.wealthscape.com/NYLIFEsecurities/investor-index.html" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYLIFE Securities</a>
+              <a href="https://secureaccountview.com/BFWeb/clients/nylifunds/index" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> MainStay Mutual Funds</a>
+            </div>
+          </li>
         </ul>
       </nav>
       
       <div class="nav-cta">
-        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contactar</a>
+        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contact Us</a>
       </div>
     </div>
   </header>
@@ -116,15 +136,15 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="breadcrumb">
-        <a href="/index.html">Inicio</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Impuestos</span>
+        <a href="/index.html">Home</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Tax Resources</span>
       </div>
-      <h1 class="hero-title">Centro de Recursos Fiscales y Tributarios</h1>
+      <h1 class="hero-title">Tax Planning & Resources</h1>
       <p class="hero-subtitle subtitle" style="color: rgba(255,255,255,0.85);">
-        Acceso directo a formularios oficiales, calendarios de cumplimiento del IRS y tablas tributarias para su planificación anual.
+        Direct access to official IRS documentation, forms, and filing rate sheets to assist your annual tax preparation.
       </p>
       <div class="hero-ctas">
-        <a href="#irs-links" class="btn btn-primary">Recursos del IRS</a>
-        <a href="#tax-brackets" class="btn btn-secondary">Tablas Impositivas</a>
+        <a href="#irs-links" class="btn btn-primary">IRS Official Links</a>
+        <a href="#tax-brackets" class="btn btn-secondary">Tax Brackets</a>
       </div>
     </div>
   </section>
@@ -135,80 +155,80 @@
       
       <div class="section-header animate-on-scroll">
         <span style="color: var(--color-gold); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">
-          Enlaces Oficiales
+          Official Channels
         </span>
-        <h2 class="section-title">Herramientas y Documentación del IRS</h2>
-        <p class="subtitle">Conexión directa con los portales federales del Internal Revenue Service de los Estados Unidos.</p>
+        <h2 class="section-title">IRS Portals & Tools</h2>
+        <p class="subtitle">Direct connection to federal portals hosted by the United States Internal Revenue Service.</p>
       </div>
       
       <div class="grid-12" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
         
         <!-- Link 1: Forms -->
-        <a href="https://www.irs.gov/forms-instructions" target="_blank" class="irs-link-card animate-on-scroll">
+        <a href="https://www.irs.gov/forms-instructions" target="_blank" rel="noopener noreferrer" class="irs-link-card animate-on-scroll">
           <div class="card-icon" style="flex-shrink: 0; margin-bottom: 0;">
             <i data-lucide="file-text"></i>
           </div>
           <div>
-            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">Formularios e Instrucciones</h3>
-            <p class="small-text">Descargue formularios oficiales como el 1040, W-9, W-2 y sus respectivas guías de llenado.</p>
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">Forms & Instructions</h3>
+            <p class="small-text">Download official forms including the 1040, W-9, W-2, and their respective instructional guides.</p>
             <span style="color:var(--color-gold); font-size:0.85rem; font-weight:600; display:inline-flex; align-items:center; gap:0.25rem; margin-top:0.75rem;">
-              Ir al IRS <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+              Visit IRS Portal <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
             </span>
           </div>
         </a>
 
         <!-- Link 2: Rates -->
-        <a href="https://www.irs.gov/newsroom/get-ready-for-tax-filing-season-2025" target="_blank" class="irs-link-card animate-on-scroll delay-100">
+        <a href="https://www.irs.gov/newsroom/get-ready-for-tax-filing-season-2025" target="_blank" rel="noopener noreferrer" class="irs-link-card animate-on-scroll delay-100">
           <div class="card-icon" style="flex-shrink: 0; margin-bottom: 0;">
             <i data-lucide="percent"></i>
           </div>
           <div>
-            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">Tasas de Impuestos Federales</h3>
-            <p class="small-text">Consulte las tasas tributarias marginales actualizadas para personas físicas y corporaciones.</p>
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">Federal Tax Rates</h3>
+            <p class="small-text">Check current marginal tax rates and corporate tax filing updates issued for the current year.</p>
             <span style="color:var(--color-gold); font-size:0.85rem; font-weight:600; display:inline-flex; align-items:center; gap:0.25rem; margin-top:0.75rem;">
-              Ir al IRS <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+              Visit IRS Newsroom <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
             </span>
           </div>
         </a>
 
         <!-- Link 3: Publications -->
-        <a href="https://www.irs.gov/publications" target="_blank" class="irs-link-card animate-on-scroll delay-200">
+        <a href="https://www.irs.gov/publications" target="_blank" rel="noopener noreferrer" class="irs-link-card animate-on-scroll delay-200">
           <div class="card-icon" style="flex-shrink: 0; margin-bottom: 0;">
             <i data-lucide="book-open"></i>
           </div>
           <div>
-            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">Publicaciones del IRS</h3>
-            <p class="small-text">Manuales detallados sobre deducciones, exclusiones fiscales de retiro y transferencias sucesorias.</p>
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">IRS Publications</h3>
+            <p class="small-text">Detailed manuals covering deductions, retirement fund tax exemptions, and estate wealth structures.</p>
             <span style="color:var(--color-gold); font-size:0.85rem; font-weight:600; display:inline-flex; align-items:center; gap:0.25rem; margin-top:0.75rem;">
-              Ir al IRS <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+              View Publications <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
             </span>
           </div>
         </a>
 
         <!-- Link 4: Glossary -->
-        <a href="https://www.irs.gov/statistics/soi-tax-stats-irs-data-book-glossary-of-terms" target="_blank" class="irs-link-card animate-on-scroll">
+        <a href="https://www.irs.gov/statistics/soi-tax-stats-irs-data-book-glossary-of-terms" target="_blank" rel="noopener noreferrer" class="irs-link-card animate-on-scroll">
           <div class="card-icon" style="flex-shrink: 0; margin-bottom: 0;">
             <i data-lucide="help-circle"></i>
           </div>
           <div>
-            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">Glosario Tributario Oficial</h3>
-            <p class="small-text">Definición legal de términos fiscales tales como AGI, ganancias de capital, fideicomisos y exenciones.</p>
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">IRS Tax Glossary</h3>
+            <p class="small-text">Legal definitions for terms such as Adjusted Gross Income (AGI), capital gains, trusts, and exemptions.</p>
             <span style="color:var(--color-gold); font-size:0.85rem; font-weight:600; display:inline-flex; align-items:center; gap:0.25rem; margin-top:0.75rem;">
-              Ir al IRS <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+              View Glossary <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
             </span>
           </div>
         </a>
 
         <!-- Link 5: Calendar -->
-        <a href="https://www.irs.gov/businesses/small-businesses-self-employed/online-tax-calendar" target="_blank" class="irs-link-card animate-on-scroll delay-100">
+        <a href="https://www.irs.gov/businesses/small-businesses-self-employed/online-tax-calendar" target="_blank" rel="noopener noreferrer" class="irs-link-card animate-on-scroll delay-100">
           <div class="card-icon" style="flex-shrink: 0; margin-bottom: 0;">
             <i data-lucide="calendar"></i>
           </div>
           <div>
-            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">Calendario Fiscal en Línea</h3>
-            <p class="small-text">Vigile de manera interactiva las fechas límites mensuales para declaraciones estimadas y corporativas.</p>
+            <h3 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight:600; margin-bottom:0.5rem; color:var(--color-primary);">Online Tax Calendar</h3>
+            <p class="small-text">Monitor monthly tax payment deadlines for estimated taxes and corporate quarterly declarations.</p>
             <span style="color:var(--color-gold); font-size:0.85rem; font-weight:600; display:inline-flex; align-items:center; gap:0.25rem; margin-top:0.75rem;">
-              Ir al IRS <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+              View Calendar <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
             </span>
           </div>
         </a>
@@ -224,60 +244,60 @@
       
       <div class="section-header animate-on-scroll">
         <span style="color: var(--color-gold); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">
-          Tablas de Referencia
+          Reference Schedules
         </span>
-        <h2 class="section-title">Tramos de Impuesto Federal sobre la Renta 2025/2026</h2>
-        <p class="subtitle">Tarifas impositivas marginales estimadas según su estado civil y nivel de ingresos anuales.</p>
+        <h2 class="section-title">Federal Income Tax Brackets 2025/2026</h2>
+        <p class="subtitle">Marginal tax rates estimated according to tax filing status and annual taxable income limits.</p>
       </div>
 
       <div class="animate-on-scroll">
         <h3 style="font-family: var(--font-sans); font-size: 1.35rem; font-weight:600; margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem;">
-          <i data-lucide="check" style="color:var(--color-gold);"></i> Declarantes Solteros (Single Filers)
+          <i data-lucide="check" style="color:var(--color-gold);"></i> Single Filers
         </h3>
         
         <table class="tax-table">
           <thead>
             <tr>
-              <th>Tasa Impositiva</th>
-              <th>Ingreso Imponible</th>
-              <th>Impuesto a Pagar</th>
+              <th>Tax Rate</th>
+              <th>Taxable Income Bracket</th>
+              <th>Tax Owed</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>10%</strong></td>
-              <td>Hasta $11,925</td>
-              <td>10% del ingreso imponible</td>
+              <td>Up to $11,925</td>
+              <td>10% of taxable income</td>
             </tr>
             <tr>
               <td><strong>12%</strong></td>
-              <td>De $11,926 a $48,475</td>
-              <td>$1,192.50 + 12% del exceso sobre $11,925</td>
+              <td>$11,926 to $48,475</td>
+              <td>$1,192.50 + 12% of the amount over $11,925</td>
             </tr>
             <tr>
               <td><strong>22%</strong></td>
-              <td>De $48,476 a $103,350</td>
-              <td>$5,578.50 + 22% del exceso sobre $48,475</td>
+              <td>$48,476 to $103,350</td>
+              <td>$5,578.50 + 22% of the amount over $48,475</td>
             </tr>
             <tr>
               <td><strong>24%</strong></td>
-              <td>De $103,351 a $197,300</td>
-              <td>$17,651.00 + 24% del exceso sobre $103,350</td>
+              <td>$103,351 to $197,300</td>
+              <td>$17,651.00 + 24% of the amount over $103,350</td>
             </tr>
             <tr>
               <td><strong>32%</strong></td>
-              <td>De $197,301 a $250,525</td>
-              <td>$40,199.00 + 32% del exceso sobre $197,300</td>
+              <td>$197,301 to $250,525</td>
+              <td>$40,199.00 + 32% of the amount over $197,300</td>
             </tr>
             <tr>
               <td><strong>35%</strong></td>
-              <td>De $250,526 a $626,350</td>
-              <td>$57,231.00 + 35% del exceso sobre $250,525</td>
+              <td>$250,526 to $626,350</td>
+              <td>$57,231.00 + 35% of the amount over $250,525</td>
             </tr>
             <tr>
               <td><strong>37%</strong></td>
-              <td>Más de $626,350</td>
-              <td>$188,769.75 + 37% del exceso sobre $626,350</td>
+              <td>Over $626,350</td>
+              <td>$188,769.75 + 37% of the amount over $626,350</td>
             </tr>
           </tbody>
         </table>
@@ -285,52 +305,52 @@
 
       <div class="animate-on-scroll" style="margin-top: 3.5rem;">
         <h3 style="font-family: var(--font-sans); font-size: 1.35rem; font-weight:600; margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem;">
-          <i data-lucide="check" style="color:var(--color-gold);"></i> Matrimonios que Declaran en Conjunto (Married Jointly)
+          <i data-lucide="check" style="color:var(--color-gold);"></i> Married Jointly
         </h3>
         
         <table class="tax-table">
           <thead>
             <tr>
-              <th>Tasa Impositiva</th>
-              <th>Ingreso Imponible</th>
-              <th>Impuesto a Pagar</th>
+              <th>Tax Rate</th>
+              <th>Taxable Income Bracket</th>
+              <th>Tax Owed</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>10%</strong></td>
-              <td>Hasta $23,850</td>
-              <td>10% del ingreso imponible</td>
+              <td>Up to $23,850</td>
+              <td>10% of taxable income</td>
             </tr>
             <tr>
               <td><strong>12%</strong></td>
-              <td>De $23,851 a $96,950</td>
-              <td>$2,385.00 + 12% del exceso sobre $23,850</td>
+              <td>$23,851 to $96,950</td>
+              <td>$2,385.00 + 12% of the amount over $23,850</td>
             </tr>
             <tr>
               <td><strong>22%</strong></td>
-              <td>De $96,951 a $206,700</td>
-              <td>$11,157.00 + 22% del exceso sobre $96,950</td>
+              <td>$96,951 to $206,700</td>
+              <td>$11,157.00 + 22% of the amount over $96,950</td>
             </tr>
             <tr>
               <td><strong>24%</strong></td>
-              <td>De $206,701 a $394,600</td>
-              <td>$35,302.00 + 24% del exceso sobre $206,700</td>
+              <td>$206,701 to $394,600</td>
+              <td>$35,302.00 + 24% of the amount over $206,700</td>
             </tr>
             <tr>
               <td><strong>32%</strong></td>
-              <td>De $394,601 a $501,050</td>
-              <td>$80,398.00 + 32% del exceso sobre $394,600</td>
+              <td>$394,601 to $501,050</td>
+              <td>$80,398.00 + 32% of the amount over $394,600</td>
             </tr>
             <tr>
               <td><strong>35%</strong></td>
-              <td>De $501,051 a $751,600</td>
-              <td>$114,462.00 + 35% del exceso sobre $501,050</td>
+              <td>$501,051 to $751,600</td>
+              <td>$114,462.00 + 35% of the amount over $501,050</td>
             </tr>
             <tr>
               <td><strong>37%</strong></td>
-              <td>Más de $751,600</td>
-              <td>$202,154.50 + 37% del exceso sobre $751,600</td>
+              <td>Over $751,600</td>
+              <td>$202,154.50 + 37% of the amount over $751,600</td>
             </tr>
           </tbody>
         </table>
@@ -342,11 +362,11 @@
   <!-- CTA SECTION -->
   <section class="bg-dark" style="text-align: center;">
     <div class="container" style="max-width: 700px;">
-      <h2 class="section-title">¿Quiere estructurar un portafolio fiscalmente óptimo?</h2>
+      <h2 class="section-title">Looking to structure a tax-efficient portfolio?</h2>
       <p class="subtitle" style="color: rgba(255,255,255,0.7); margin-bottom: 2.5rem;">
-        Coordinamos con sus contadores y CPAs para estructurar fideicomisos y pólizas de seguros de retiro con alto rendimiento neto de impuestos.
+        We coordinate directly with your CPAs and accountants to structure trust vehicles and retirement policies with high net-of-tax returns.
       </p>
-      <a href="/contact-us.html" class="btn btn-primary btn-lg">Programar Consulta de Planificación Fiscal</a>
+      <a href="/contact-us.html" class="btn btn-primary btn-lg">Schedule Tax Planning Consultation</a>
     </div>
   </section>
 
@@ -359,10 +379,9 @@
         <div class="footer-logo-desc">
           <a href="/index.html" class="logo-wrapper">
             <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
-            <div class="logo-text" style="color: var(--color-white);">BERMEO<span>.</span></div>
           </a>
           <p class="footer-desc">
-            Asesoría sofisticada y seguros de alta gama para salvaguardar el patrimonio familiar, optimizar planes de retiro y asegurar un legado impecable.
+            Sophisticated advisory and premium insurance solutions designed to safeguard family wealth, optimize retirement planning, and secure an impeccable legacy.
           </p>
           <div class="footer-socials">
             <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="users"></i></a>
@@ -373,29 +392,29 @@
         
         <!-- Col 2: Navigation Links -->
         <div class="footer-col">
-          <h4>Explorar</h4>
+          <h4>Explore</h4>
           <ul class="footer-links">
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/productos.html">Productos Premium</a></li>
-            <li><a href="/servicios.html">Servicios Financieros</a></li>
-            <li><a href="/about-us.html">Nosotros</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">About Us</a></li>
+            <li><a href="/products.html">Premium Products</a></li>
+            <li><a href="/services.html">Financial Services</a></li>
           </ul>
         </div>
         
         <!-- Col 3: Resources Links -->
         <div class="footer-col">
-          <h4>Recursos</h4>
+          <h4>Resources</h4>
           <ul class="footer-links">
-            <li><a href="/calculators.html">Calculadoras Financieras</a></li>
-            <li><a href="/articles.html">Artículos Educativos</a></li>
-            <li><a href="/videos.html">Videos Explicativos</a></li>
-            <li><a href="/tax.html">Recursos de Impuestos</a></li>
+            <li><a href="/calculators.html">Financial Calculators</a></li>
+            <li><a href="/articles.html">Educational Articles</a></li>
+            <li><a href="/tax-resources.html">Tax Resources</a></li>
+            <li><a href="/videos.html">Explanatory Videos</a></li>
           </ul>
         </div>
         
         <!-- Col 4: Contact info -->
         <div class="footer-col">
-          <h4>Contacto</h4>
+          <h4>Contact</h4>
           <ul class="footer-contact-list">
             <li>
               <i data-lucide="phone"></i>
@@ -403,7 +422,7 @@
             </li>
             <li>
               <i data-lucide="mail"></i>
-              <span>contacto@bermeoinsurance.com</span>
+              <span>contact@bermeoinsurance.com</span>
             </li>
             <li>
               <i data-lucide="map-pin"></i>
@@ -416,11 +435,11 @@
       
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. All rights reserved.</p>
         <div class="footer-bottom-links">
-          <a href="#">Política de Privacidad</a>
-          <a href="#">Términos de Servicio</a>
-          <a href="#">Descargo de Responsabilidad</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Disclosures</a>
         </div>
       </div>
     </div>

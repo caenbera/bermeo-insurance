@@ -19,13 +19,15 @@ import {
   FileText, 
   Percent, 
   ChevronRight,
+  ChevronDown,
   TrendingUp,
   HeartHandshake,
   Award,
   Users,
   Compass,
   FileCheck,
-  Check
+  Check,
+  ExternalLink
 } from 'lucide';
 
 // Initialize Lucide Icons globally
@@ -51,13 +53,15 @@ export function initIcons() {
       FileText,
       Percent,
       ChevronRight,
+      ChevronDown,
       TrendingUp,
       HeartHandshake,
       Award,
       Users,
       Compass,
       FileCheck,
-      Check
+      Check,
+      ExternalLink
     }
   });
 }
@@ -94,6 +98,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Mobile dropdown menus toggle (on click for mobile viewports)
+  const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+  dropdowns.forEach(dropdown => {
+    const link = dropdown.querySelector('a');
+    if (link) {
+      link.addEventListener('click', (e) => {
+        // Only trigger on mobile screen width
+        if (window.innerWidth <= 768) {
+          e.preventDefault(); // Prevent navigating if clicked
+          dropdown.classList.toggle('active');
+          
+          // Close other dropdowns
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('active');
+            }
+          });
+        }
+      });
+    }
+  });
 
   // Scroll animations
   const animatedElements = document.querySelectorAll('.animate-on-scroll');

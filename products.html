@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Coverage Products — Bermeo Insurance</title>
+  <meta name="description" content="Explore our portfolio of high-end insurance: Life, Disability, Long-Term Care, and Wealth Protection designed to secure your legacy.">
+  
+  <!-- Favicons and Web App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="/src/style.css">
+  
+  <style>
+    .hero-products {
+      background-image: url('/src/assets/hero-products.png');
+    }
+    
+    .product-detail-card {
+      border-left: 4px solid var(--color-gold);
+      margin-bottom: 2rem;
+      background-color: var(--color-white);
+      padding: 2.5rem;
+      border-radius: 0 var(--radius-card) var(--radius-card) 0;
+      box-shadow: var(--shadow-premium);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .product-detail-card:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow-premium-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <div class="container header-container">
+      <a href="/index.html" class="logo-wrapper">
+        <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i data-lucide="menu"></i>
+      </button>
+      
+      <nav id="navMenu">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#" class="active">Products & Services <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/products.html" class="dropdown-item"><i data-lucide="shield"></i> Products</a>
+              <a href="/services.html" class="dropdown-item"><i data-lucide="landmark"></i> Services</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Resources <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="/calculators.html" class="dropdown-item"><i data-lucide="calculator"></i> Calculators</a>
+              <a href="/articles.html" class="dropdown-item"><i data-lucide="book-open"></i> Articles</a>
+              <a href="/tax-resources.html" class="dropdown-item"><i data-lucide="file-text"></i> Tax Resources</a>
+              <a href="/videos.html" class="dropdown-item"><i data-lucide="play"></i> Videos</a>
+            </div>
+          </li>
+          
+          <li class="nav-item-dropdown">
+            <a href="#">Account Access <i data-lucide="chevron-down" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.mynyl.newyorklife.com" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYL Online Account</a>
+              <a href="https://investor.wealthscape.com/NYLIFEsecurities/investor-index.html" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> NYLIFE Securities</a>
+              <a href="https://secureaccountview.com/BFWeb/clients/nylifunds/index" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i data-lucide="external-link"></i> MainStay Mutual Funds</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="/contact-us.html" class="btn btn-primary btn-sm">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero hero-products">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="breadcrumb">
+        <a href="/index.html">Home</a> <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> <span>Products</span>
+      </div>
+      <h1 class="hero-title">Bespoke Protection Solutions</h1>
+      <p class="hero-subtitle subtitle" style="color: rgba(255,255,255,0.85);">
+        Bespoke insurance programs designed to preserve your lifestyle, shield your capital, and safeguard your family legacy.
+      </p>
+      <div class="hero-ctas">
+        <a href="#products-list" class="btn btn-primary">Explore Coverages</a>
+        <a href="/contact-us.html" class="btn btn-secondary">Request Product Advisory</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO INTELLECTUAL -->
+  <section class="bg-light">
+    <div class="container" style="max-width: 900px; text-align: center;">
+      <div class="animate-on-scroll">
+        <span style="color: var(--color-gold); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">
+          Coverage Engineering
+        </span>
+        <h2 class="section-title">High-limit insurance design</h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--color-text-grey);">
+          Our philosophy in premium insurance revolves around structuring coverages that act as a wealth shield. We collaborate with top-tier global underwriters to guarantee high coverage limits, transparent terms, and a prioritized, seamless claims service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILED PRODUCTS LIST -->
+  <section id="products-list">
+    <div class="container">
+      
+      <div class="grid-12" style="display: grid; grid-template-columns: 1fr; gap: 3rem; max-width: 960px; margin: 0 auto;">
+        
+        <!-- Product 1: Life Insurance -->
+        <div class="product-detail-card animate-on-scroll">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div class="card-icon" style="margin-bottom:0;">
+                <i data-lucide="shield"></i>
+              </div>
+              <h3 style="font-size: 1.85rem; font-family: var(--font-serif);">Individual Life Insurance</h3>
+            </div>
+            <span style="background-color: rgba(200, 154, 61, 0.1); color: var(--color-gold); padding: 0.35rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Strategic</span>
+          </div>
+          <p>
+            Provides an immediate, tax-free injection of liquidity when it is needed most. Structured to sustain your family's lifestyle, cover complex estate taxes, or fund generational wealth transitions.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 0.5rem; border-top: 1px solid #eee; padding-top: 1.5rem;">
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Premium Term Life</h5>
+              <p class="small-text">High-limit protection during your years of peak active income and liabilities.</p>
+            </div>
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Whole & Universal Life</h5>
+              <p class="small-text">Permanent protection combined with tax-advantaged cash value accumulation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Long-Term Care -->
+        <div class="product-detail-card animate-on-scroll">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div class="card-icon" style="margin-bottom:0;">
+                <i data-lucide="heart-handshake"></i>
+              </div>
+              <h3 style="font-size: 1.85rem; font-family: var(--font-serif);">Long-Term Care (LTC)</h3>
+            </div>
+            <span style="background-color: rgba(200, 154, 61, 0.1); color: var(--color-gold); padding: 0.35rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Preservation</span>
+          </div>
+          <p>
+            Shields your investment assets from the exponential costs of specialized medical care. This coverage funds private nursing, luxury assisted living facilities, and in-home professional care globally, guaranteeing choice and dignity.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 0.5rem; border-top: 1px solid #eee; padding-top: 1.5rem;">
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Asset Protection</h5>
+              <p class="small-text">Prevents the forced liquidation of real estate or stock portfolios to fund healthcare needs.</p>
+            </div>
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Modern Hybrids</h5>
+              <p class="small-text">Plans coupled with life insurance: if long-term care is never needed, the benefit is paid out to heirs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Wealth Protection -->
+        <div class="product-detail-card animate-on-scroll">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div class="card-icon" style="margin-bottom:0;">
+                <i data-lucide="landmark"></i>
+              </div>
+              <h3 style="font-size: 1.85rem; font-family: var(--font-serif);">Wealth Protection & Umbrella</h3>
+            </div>
+            <span style="background-color: rgba(200, 154, 61, 0.1); color: var(--color-gold); padding: 0.35rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Exclusive</span>
+          </div>
+          <p>
+            High-limit excess liability coverage (Umbrella) designed to protect high-net-worth individuals from complex litigation. Safeguards your properties, international investments, vessels, and private collections.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 0.5rem; border-top: 1px solid #eee; padding-top: 1.5rem;">
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Multi-Million Limits</h5>
+              <p class="small-text">Bespoke personal excess liability coverage structures ranging from $1M to over $50M USD.</p>
+            </div>
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Elite Legal Defense</h5>
+              <p class="small-text">Covers defense fees and legal representation using premier national law firms.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Disability Income -->
+        <div class="product-detail-card animate-on-scroll">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div class="card-icon" style="margin-bottom:0;">
+                <i data-lucide="trending-up"></i>
+              </div>
+              <h3 style="font-size: 1.85rem; font-family: var(--font-serif);">Executive Disability Income</h3>
+            </div>
+            <span style="background-color: rgba(200, 154, 61, 0.1); color: var(--color-gold); padding: 0.35rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Security</span>
+          </div>
+          <p>
+            Your greatest asset is your ability to generate income. This program guarantees that in the event of an illness or injury, you receive high-level monthly income streams to preserve your lifestyle.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 0.5rem; border-top: 1px solid #eee; padding-top: 1.5rem;">
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">"Own-Occupation" Definition</h5>
+              <p class="small-text">Guarantees benefits if you are unable to perform the duties of your specific executive occupation.</p>
+            </div>
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Tax-Free Income Streams</h5>
+              <p class="small-text">Estructured so that monthly benefit payouts maintain their full purchasing power net of taxes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: Business Insurance -->
+        <div class="product-detail-card animate-on-scroll">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div class="card-icon" style="margin-bottom:0;">
+                <i data-lucide="briefcase"></i>
+              </div>
+              <h3 style="font-size: 1.85rem; font-family: var(--font-serif);">Business & Corporate Succession</h3>
+            </div>
+            <span style="background-color: rgba(200, 154, 61, 0.1); color: var(--color-gold); padding: 0.35rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Corporate</span>
+          </div>
+          <p>
+            Estrategias designed to protect the continuity of family-owned and privately-held businesses. Mitigates the loss of key executives and funds ownership buyouts.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 0.5rem; border-top: 1px solid #eee; padding-top: 1.5rem;">
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Key Person Coverage</h5>
+              <p class="small-text">Compensates the business for financial losses or recruitment costs after losing a vital leader.</p>
+            </div>
+            <div>
+              <h5 style="font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); margin-bottom: 0.25rem;">Buy-Sell Agreement Funding</h5>
+              <p class="small-text">Provides the required liquidity for surviving business partners to purchase the deceased partner's shares.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="bg-dark" style="text-align: center; padding: 100px 0;">
+    <div class="container" style="max-width: 700px;">
+      <h2 class="section-title">Structure your custom coverage today</h2>
+      <p class="subtitle" style="color: rgba(255,255,255,0.7); margin-bottom: 2.5rem;">
+        Speak with a certified wealth consultant to assess your risk exposure and design a bespoke insurance portfolio.
+      </p>
+      <a href="/contact-us.html" class="btn btn-primary btn-lg">Schedule Private Risk Assessment</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand -->
+        <div class="footer-logo-desc">
+          <a href="/index.html" class="logo-wrapper">
+            <img src="/logo.png" alt="Bermeo Insurance Logo" class="logo-img">
+          </a>
+          <p class="footer-desc">
+            Sophisticated advisory and premium insurance solutions designed to safeguard family wealth, optimize retirement planning, and secure an impeccable legacy.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="users"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="award"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="compass"></i></a>
+          </div>
+        </div>
+        
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about-us.html">About Us</a></li>
+            <li><a href="/products.html">Premium Products</a></li>
+            <li><a href="/services.html">Financial Services</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 3: Resources Links -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="/calculators.html">Financial Calculators</a></li>
+            <li><a href="/articles.html">Educational Articles</a></li>
+            <li><a href="/tax-resources.html">Tax Resources</a></li>
+            <li><a href="/videos.html">Explanatory Videos</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 4: Contact info -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i data-lucide="phone"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li>
+              <i data-lucide="mail"></i>
+              <span>contact@bermeoinsurance.com</span>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <span>800 Pine St, Suite 2400<br>Seattle, WA 98101</span>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bermeo Insurance & Wealth Planning. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript bundle -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
