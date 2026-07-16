@@ -312,7 +312,7 @@ nav a:hover, nav a.active {
 /* HERO SECTION */
 .hero {
   position: relative;
-  height: 560px; /* Shorter, elegant height */
+  height: 620px; /* Increased height to prevent text overflow */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -861,8 +861,8 @@ footer {
 
 @media (min-width: 769px) {
   .hero {
-    background-size: auto 82%;
-    background-position: right 4% center;
+    background-size: auto 90%;
+    background-position: right bottom;
     background-repeat: no-repeat;
   }
 }
